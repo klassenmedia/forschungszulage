@@ -297,31 +297,33 @@ h1.hero-h1{
 }
 @media(min-width:768px){.hero-sub{font-size:18px}}
 .hero-cta-row{
-  display:flex;flex-direction:row;gap:12px;
+  display:flex;flex-direction:row;gap:10px;
   flex-wrap:nowrap;align-items:stretch;
   margin-bottom:16px;
-  max-width:580px;
+  width:100%;max-width:580px;
 }
 .btn-lime{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   background:var(--lime);color:var(--dark);
   border:none;border-radius:10px;
-  padding:18px 12px;font-size:18px;font-weight:800;
-  cursor:pointer;white-space:nowrap;text-align:center;
+  padding:15px 10px;font-size:15px;font-weight:800;
+  cursor:pointer;white-space:normal;text-align:center;
   transition:filter .15s,transform .12s;
-  flex:1;
+  flex:1;min-width:0;
 }
+@media(min-width:768px){.btn-lime{padding:18px 12px;font-size:18px;white-space:nowrap}}
 .btn-lime:hover{filter:brightness(1.1)}
 .btn-lime:active{transform:scale(0.98)}
 .btn-ghost{
   display:inline-flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,0.06);color:var(--text);
   border:1px solid rgba(150,190,15,0.3);border-radius:10px;
-  padding:18px 12px;font-size:18px;font-weight:700;
-  cursor:pointer;white-space:nowrap;text-align:center;
+  padding:15px 10px;font-size:15px;font-weight:700;
+  cursor:pointer;white-space:normal;text-align:center;
   transition:background .15s,border-color .15s;
-  flex:1;
+  flex:1;min-width:0;
 }
+@media(min-width:768px){.btn-ghost{padding:18px 12px;font-size:18px;white-space:nowrap}}
 .btn-ghost:hover{background:rgba(255,255,255,0.1);border-color:rgba(150,190,15,0.5)}
 .hero-micro{
   font-size:12px;color:var(--text3);letter-spacing:0.03em;
