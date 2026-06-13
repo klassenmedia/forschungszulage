@@ -291,6 +291,21 @@ h1.hero-h1{
 @media(min-width:480px){.hero-visual-headline{font-size:50px}}
 @media(min-width:768px){.hero-visual-headline{font-size:60px}}
 @media(min-width:1200px){.hero-visual-headline{font-size:72px}}
+.hero-stats-row{
+  display:flex;align-items:center;
+  margin:24px 0 28px;
+}
+.hero-stat{display:flex;flex-direction:column;gap:4px}
+.hero-stat-num{
+  font-size:48px;font-weight:900;color:var(--lime);
+  letter-spacing:-0.03em;line-height:1;
+}
+@media(min-width:768px){.hero-stat-num{font-size:64px}}
+.hero-stat-lbl{font-size:13px;color:var(--text2);font-weight:500;letter-spacing:0.02em}
+.hero-stat-divider{
+  width:1px;height:60px;background:rgba(150,190,15,0.3);
+  margin:0 28px;flex-shrink:0;
+}
 .hero-sub{
   font-size:16px;color:var(--text2);line-height:1.75;
   margin-bottom:32px;max-width:580px;
@@ -561,16 +576,22 @@ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;ba
     <!-- Eyecatcher: visuell dominant, kein H-Tag nötig -->
     <p class="hero-eyecatcher"><span class="blink-dot" aria-hidden="true"></span>ROBIN GUT Stiftung</p>
 
-    <!-- Visueller Headline-Satz — der Moment wo Unternehmer aufwacht -->
-    <p class="hero-visual-headline">Schwierige Zeiten?<br>Dann holen Sie sich,<br>was <em>Ihnen gehört.</em></p>
+    <!-- Visueller Headline-Satz -->
+    <p class="hero-visual-headline">Ihr gesetzlicher<br>Rechtsanspruch.<br><em>Noch ungenutzt?</em></p>
 
-    <p class="hero-sub">Der Staat erstattet bis zu 35&thinsp;% Ihrer Forschungsausgaben — jährlich, garantiert, per Gesetz. Die meisten Unternehmer lassen dieses Geld ungenutzt liegen. Wir sorgen dafür, dass Sie es bekommen.</p>
+    <div class="hero-stats-row">
+      <div class="hero-stat"><span class="hero-stat-num" data-target="35" data-suffix=" %">0 %</span><span class="hero-stat-lbl">Fördersatz für KMU</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num" data-target="4.2" data-suffix=" Mio. €" data-decimal="1">0 Mio. €</span><span class="hero-stat-lbl">Max. Förderung pro Jahr</span></div>
+    </div>
+
+    <p class="hero-sub">Das Forschungszulagengesetz (FZulG) garantiert jedem steuerpflichtigen Unternehmen in Deutschland eine steuerfreie Erstattung auf F&amp;E-Ausgaben — unabhängig von Branche oder Unternehmensgröße. Die ROBIN GUT Stiftung übernimmt die vollständige BSFZ-Dokumentation für Sie.</p>
 
     <div class="hero-cta-row">
-      <button class="btn-lime" onclick="document.getElementById('formular').scrollIntoView({behavior:'smooth'})">Kostenlos prüfen lassen →</button>
-      <button class="btn-ghost" onclick="document.getElementById('wie-es-geht').scrollIntoView({behavior:'smooth'})">Wie funktioniert das?</button>
+      <button class="btn-lime" onclick="document.getElementById('formular').scrollIntoView({behavior:'smooth'})">Jetzt Potenzial prüfen lassen →</button>
+      <button class="btn-ghost" onclick="document.getElementById('wie-es-geht').scrollIntoView({behavior:'smooth'})">Wie es funktioniert</button>
     </div>
-    <p class="hero-micro">Unverbindlich · Kostenlos · Antwort in 1–2 Werktagen</p>
+    <p class="hero-micro">Kostenlos &amp; unverbindlich · Betriebsprüfungssicher · Antwort in 1–2 Werktagen</p>
   </div></section>
 
 <!-- KENNZAHLEN -->
@@ -667,33 +688,33 @@ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;ba
 <!-- PROZESS -->
 <section class="prozess-wrap fade-in" id="wie-es-geht" aria-labelledby="prozess-heading">
   <div class="prozess-content">
-  <div class="stag">Unser Versprechen</div>
-  <h2 id="prozess-heading" style="font-size:26px;font-weight:800;letter-spacing:-0.015em;margin-bottom:10px">Wir erledigen alles. Sie müssen nur starten.</h2>
-  <p class="prozess-intro">Kein Papierkram. Keine Bürokratie. Kein Fachwissen nötig. <strong>Tragen Sie sich ein — den Rest übernehmen wir.</strong></p>
+  <div class="stag">So funktioniert es</div>
+  <h2 id="prozess-heading" style="font-size:26px;font-weight:800;letter-spacing:-0.015em;margin-bottom:10px">Administrative Exzellenz. Ihr Aufwand: minimal.</h2>
+  <p class="prozess-intro">Keine juristische Vorkenntnis. Keine Bürokratie. Keine versteckten Kosten. <strong>Sie beschreiben Ihr Projekt — unsere akkreditierten Experten übernehmen den Rest.</strong></p>
 
   <div class="steps-container" id="steps">
     <div class="step-line"><div class="step-line-fill" id="step-line-fill"></div></div>
     <div class="step" id="step1">
       <div class="step-circle">1</div>
       <div class="step-body">
-        <strong>Sie füllen ein Formular aus</strong>
-        <p>Name, Unternehmen, was Sie entwickeln. Zwei Minuten. Das war es von Ihrer Seite.</p>
+        <strong>Innovationspotenzial beschreiben</strong>
+        <p>Kurze Beschreibung Ihrer F&amp;E-Tätigkeit — Produkte, Prozesse, Software. Zwei Minuten. Das war es von Ihrer Seite.</p>
         <span class="step-badge">2 Minuten</span>
       </div>
     </div>
     <div class="step" id="step2">
       <div class="step-circle">2</div>
       <div class="step-body">
-        <strong>Wir übernehmen alles</strong>
-        <p>Prüfung, Antragsunterlagen, Kommunikation mit der Bescheinigungsstelle, Einreichung beim Finanzamt. Sie werden informiert — müssen aber nichts tun.</p>
-        <span class="step-badge">Wir erledigen das</span>
+        <strong>BSFZ-Dokumentation durch Experten</strong>
+        <p>Unsere akkreditierten Partner prüfen die Frascati-Konformität Ihrer Projekte, erstellen die vollständige Antragsunterlage und kommunizieren direkt mit der Bescheinigungsstelle Forschungszulage (BSFZ) und dem Finanzamt.</p>
+        <span class="step-badge">Betriebsprüfungssicher</span>
       </div>
     </div>
     <div class="step" id="step3">
       <div class="step-circle">3</div>
       <div class="step-body">
-        <strong>Das Geld kommt zu Ihnen</strong>
-        <p>Die Forschungszulage wird verrechnet oder direkt ausgezahlt. Und das jedes Jahr erneut — solange Sie forschen und entwickeln.</p>
+        <strong>Steuerfreie Erstattung — jährlich</strong>
+        <p>Die Forschungszulage wird mit Ihrer Steuerlast verrechnet oder bei Verlustjahren direkt ausgezahlt. Jedes Jahr erneut — solange Sie forschen und entwickeln.</p>
         <span class="step-badge">Jährlich wiederkehrend</span>
       </div>
     </div>
@@ -706,7 +727,8 @@ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;ba
   <div class="mission-content">
   <div class="stag">Wer wir sind</div>
   <h2 class="mission-big" id="mission-heading">Die <em>ROBIN GUT Stiftung</em> — keine Beratungsfirma. Eine Mission.</h2>
-  <p>Als gemeinnützige Stiftung haben wir keine Provisionsinteressen und keine versteckten Kosten. Unsere Aufgabe ist es, Fördermittel dorthin zu bringen, wo Innovation entsteht — in Ihr Unternehmen.</p>
+  <p>Als gemeinnützige Stiftung unter der Schirmherrschaft von <strong>Dieter Könnes</strong> — bekannt aus „Könnes kämpft" (WDR) und „Stern TV" (RTL) — haben wir keine Provisionsinteressen und keine versteckten Kosten. Könnes steht seit Jahrzehnten für Verbraucherschutz und Transparenz. Diese Werte prägen unsere Arbeit.</p>
+  <p>Wir verbinden Ihr Unternehmen mit akkreditierten Fördermittel-Experten, die die vollständige BSFZ-Dokumentation nach wissenschaftlichen Standards übernehmen — betriebsprüfungssicher, lückenlos, nachhaltig. Als Stiftungspartner profitieren Sie zusätzlich vom renommierten <strong>Robin Gut Nachhaltigkeitssiegel</strong> (in Kooperation mit der DGQA, angelehnt an DIN ISO 26000).</p>
   <p>Wir bauen die Brücke. Sie gehen rüber.</p>
   </div>
 </section>
@@ -719,27 +741,35 @@ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;ba
 
   <div class="faq-item">
     <button class="faq-q" aria-expanded="false">Was ist die Forschungszulage genau?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">Die Forschungszulage ist eine staatliche Förderung nach dem Forschungszulagengesetz (FZulG) von 2020. Unternehmen in Deutschland bekommen 25 bis 35 Prozent ihrer Forschungs- und Entwicklungsausgaben vom Staat erstattet — als gesetzlichen Rechtsanspruch, nicht als Wettbewerb.</div>
+    <div class="faq-a" role="region">Die Forschungszulage ist ein gesetzlicher Rechtsanspruch nach dem Forschungszulagengesetz (FZulG) von 2020. Steuerpflichtige Unternehmen in Deutschland erhalten 25 bis 35 % ihrer F&amp;E-Ausgaben vom Staat erstattet — kein Fördertopf, kein Wettbewerb. Wer die Kriterien erfüllt, bekommt das Geld. Ohne Ausnahme.</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Wer kann sie beantragen?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">Alle steuerpflichtigen Unternehmen in Deutschland — unabhängig von Größe und Branche. Voraussetzung ist, dass das Unternehmen eigene Forschungs- und Entwicklungsprojekte durchführt oder in Auftrag gibt.</div>
+    <button class="faq-q" aria-expanded="false">Wer kann die Forschungszulage beantragen?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">Alle steuerpflichtigen Unternehmen in Deutschland — unabhängig von Größe, Rechtsform und Branche. Voraussetzung ist, dass eigene oder in Auftrag gegebene F&amp;E-Projekte durchgeführt werden, die den Frascati-Kriterien entsprechen (Neuartigkeit, technisches Risiko, Systematik, Reproduzierbarkeit).</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Wie viel Geld bekomme ich zurück?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">25 Prozent Ihrer F&amp;E-Ausgaben — für KMU auf Antrag 35 Prozent. Die maximale jährliche Förderung liegt bei 3 Mio. Euro (Standard) bzw. 4,2 Mio. Euro für KMU. Ab 2026 steigt die Bemessungsgrundlage auf 12 Mio. Euro.</div>
+    <button class="faq-q" aria-expanded="false">Wie viel Förderung kann ich erhalten?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">25 % der förderfähigen F&amp;E-Ausgaben — für KMU 35 %. Ab 2026 beträgt die maximale Bemessungsgrundlage 12 Mio. Euro pro Wirtschaftsjahr, was einer maximalen steuerfreien Erstattung von bis zu 4,2 Mio. Euro jährlich entspricht. Hinzu kommt eine 20%-Gemeinkostenpauschale, die den effektiven Fördersatz weiter erhöht.</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Kann ich das rückwirkend beantragen?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">Ja — bis zu 4 Jahre rückwirkend. Jedes abgelaufene Jahr ohne Antrag ist jedoch unwiederbringlich verloren. Wer also seit 2021 forscht und noch nie beantragt hat, sollte jetzt handeln.</div>
+    <button class="faq-q" aria-expanded="false">Kann ich rückwirkend beantragen?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">Ja — bis zu 4 Jahre rückwirkend. Jedes abgelaufene Jahr ohne Antrag ist unwiederbringlich verloren. Wer seit 2021 forscht und noch keinen Antrag gestellt hat, sollte jetzt handeln — die Fristen laufen.</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Was kostet mich die Unterstützung?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">Die Erstprüfung ist vollständig kostenlos und unverbindlich. Als gemeinnützige Stiftung berechnen wir keine Stundenhonorare. Sprechen Sie uns an — wir erläutern alles Weitere persönlich.</div>
+    <button class="faq-q" aria-expanded="false">Was ist die BSFZ und welche Rolle spielt sie?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">Die Bescheinigungsstelle Forschungszulage (BSFZ) ist die zuständige Bundesbehörde, die prüft, ob ein Projekt die wissenschaftlichen Kriterien erfüllt. Erst nach deren positiver Bescheinigung wird der Antrag beim Finanzamt eingereicht. Unsere akkreditierten Partner übernehmen diese gesamte Kommunikation für Sie.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Wie sicher ist die Bewilligung — auch bei Betriebsprüfung?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">Unsere Partner erstellen die technische Dokumentation nach ingenieurwissenschaftlichen Standards — so lückenlos, dass sie auch Jahre später einer steuerlichen Außenprüfung standhält. Die Forschungszulage ist keine Grauzone: Sie ist gesetzlich verankert und wird durch eine BSFZ-Bescheinigung offiziell bestätigt.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" aria-expanded="false">Was zählt als förderfähige Forschung?<span class="faq-icon" aria-hidden="true">+</span></button>
-    <div class="faq-a" role="region">Grundlagenforschung, industrielle Forschung und experimentelle Entwicklung. Darunter fallen Softwareentwicklung, Produktinnovationen, neue Fertigungsverfahren, Optimierung von Maschinen, Lebensmittelentwicklung und vieles mehr. Die Förderung ist bewusst technologieoffen gehalten.</div>
+    <div class="faq-a" role="region">Grundlagenforschung, industrielle Forschung und experimentelle Entwicklung — technologieoffen. Softwareentwicklung, Produktinnovationen, neue Fertigungsverfahren, Maschinenoptimierung, Lebensmittelentwicklung, grüne Technologien und vieles mehr. Wenn Sie etwas entwickeln, verbessern oder systematisch erforschen, haben Sie höchstwahrscheinlich Anspruch.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Was kostet die Unterstützung durch die ROBIN GUT Stiftung?<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region">Die Erstprüfung Ihres Innovationspotenzials ist vollständig kostenlos und unverbindlich. Als gemeinnützige Stiftung erheben wir keine Stundenhonorare. Die Konditionen der technischen Umsetzung durch unsere akkreditierten Partner erläutern wir Ihnen transparent im persönlichen Gespräch.</div>
   </div>
   </div>
 </section>
@@ -748,8 +778,8 @@ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;ba
 <section class="form-sec fade-in" id="formular" aria-labelledby="formular-heading">
   <div class="form-content">
   <div class="stag" style="text-align:center">Jetzt starten</div>
-  <p class="form-hl" id="formular-heading">Kostenlose Erstprüfung anfordern</p>
-  <p class="form-sub">Tragen Sie sich ein. Wir melden uns in 1–2 Werktagen — und übernehmen dann alles für Sie.</p>
+  <p class="form-hl" id="formular-heading">Innovationspotenzial kostenlos analysieren lassen</p>
+  <p class="form-sub">Beschreiben Sie kurz Ihre F&amp;E-Tätigkeit. Unsere Experten melden sich in 1–2 Werktagen mit einer ersten Einschätzung Ihres Fördervolumens — unverbindlich und betriebsprüfungssicher.</p>
 
   <form id="anfrage" novalidate>
     <div class="fg"><label for="f-name">Ihr Name</label><input id="f-name" type="text" placeholder="Max Mustermann" required></div>
@@ -879,7 +909,7 @@ document.getElementById('anfrage').addEventListener('submit', function(e) {
     requestAnimationFrame(step);
   }
 
-  var counters = document.querySelectorAll('.z-num[data-target]');
+  var counters = document.querySelectorAll('.z-num[data-target], .hero-stat-num[data-target]');
   var seen = new Set();
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
