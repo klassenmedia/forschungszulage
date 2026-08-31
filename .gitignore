@@ -1,0 +1,13 @@
+# Original-Videomaterial (unkomprimiert, nur die Web-Fassung wird ausgeliefert)
+lovable-hero.mp4
+hero-video.mp4
+
+# Zwischendateien des Zusammenbaus
+fonts/
+logo.b64
+fav.b64
+logo_robingut.png
+favicon.png
+
+# Lokale Vorschau-Konfiguration
+.claude/

@@ -1,0 +1,102 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist die Forschungszulage genau?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Forschungszulage ist ein steuerlicher Rechtsanspruch nach dem Forschungszulagengesetz (FZulG), der steuerpflichtigen Unternehmen in Deutschland 25 % ihrer förderfähigen Forschungs- und Entwicklungsaufwendungen erstattet. Kleine und mittlere Unternehmen können auf Antrag einen erhöhten Satz von 35 % erhalten. Das Gesetz gilt seit dem 1. Januar 2020. Anders als bei einem Zuschussprogramm konkurrieren Sie um kein begrenztes Budget: Wer die gesetzlichen Kriterien erfüllt, hat Anspruch auf die Zulage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer kann die Forschungszulage beantragen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Forschungszulage können alle steuerpflichtigen Unternehmen in Deutschland beantragen, unabhängig von Größe, Rechtsform und Branche. Voraussetzung sind eigene oder anteilig in Auftrag gegebene Forschungs- und Entwicklungsvorhaben, die den Frascati-Kriterien entsprechen: Neuartigkeit, technisches Risiko, planmäßiges Vorgehen und Übertragbarkeit der Ergebnisse. Auch Einzelunternehmen und Personengesellschaften sind antragsberechtigt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie hoch ist die Förderung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Fördersatz der Forschungszulage beträgt 25 % der förderfähigen Aufwendungen; kleine und mittlere Unternehmen im Sinne der EU-Definition können auf Antrag 35 % erhalten. Ab 2026 liegt die maximale Bemessungsgrundlage bei 12 Mio. € je Wirtschaftsjahr. Daraus ergibt sich ein Höchstbetrag von 4,2 Mio. € pro Jahr für KMU und 3,0 Mio. € für größere Unternehmen. Wichtig: Der erhöhte Satz von 35 % ist ein Antragswahlrecht und muss beim Finanzamt ausdrücklich beantragt werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was hat es mit der 20-%-Gemeinkostenpauschale auf sich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für Forschungsvorhaben mit Beginn ab dem 1. Januar 2026 erhöht ein pauschaler Aufschlag von 20 % die förderfähigen Aufwendungen. Die Pauschale wirkt auf die Bemessungsgrundlage und lässt den Fördersatz unverändert: Der gesetzliche Satz bleibt bei 25 % beziehungsweise 35 % für KMU. Bezogen auf Ihre ursprünglichen F&E-Kosten kommen Sie damit je nach Projekt auf bis zu rund 42 % Erstattung. Für die rückwirkend beantragbaren Jahre 2022 bis 2025 gilt die Pauschale noch nicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann man die Forschungszulage rückwirkend beantragen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Forschungszulage lässt sich im Regelfall bis zu vier Jahre rückwirkend beantragen; die Frist ergibt sich aus der steuerlichen Festsetzungsverjährung nach § 169 AO. Stand 2026 sind bei kalendergleichem Wirtschaftsjahr die Jahre 2022 bis 2025 offen. Der Antrag bei der Bescheinigungsstelle Forschungszulage selbst ist an keine Frist gebunden und kann auch für längst abgeschlossene Vorhaben gestellt werden. Ob in Ihrem Fall ein längerer Zeitraum in Betracht kommt, klären wir in der Potenzialanalyse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es die Forschungszulage auch in Verlustjahren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Forschungszulage kommt auch in Verlustjahren bei Ihnen an: Sie wird zunächst auf Ihre festgesetzte Steuer angerechnet, und der übersteigende Betrag wird an Sie ausgezahlt. Fällt im betreffenden Jahr also keine oder wenig Steuer an, erhalten Sie die Zulage ganz oder überwiegend als Auszahlung. Der Vorgang ist an die nächste Steuerfestsetzung gekoppelt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Kosten sind bei der Forschungszulage förderfähig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Förderfähig sind vor allem die Personalkosten der im Vorhaben beschäftigten Mitarbeitenden einschließlich der Zukunftssicherungsausgaben. Hinzu kommen Eigenleistungen von Einzelunternehmern und Gesellschaftern, die seit 2026 mit 100 € je Stunde bei höchstens 40 Stunden pro Woche angesetzt werden, sowie 70 % des Entgelts für Auftragsforschung. Ansetzbar ist außerdem die Wertminderung beweglicher Wirtschaftsgüter, die ausschließlich im Vorhaben eingesetzt werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet die Beantragung der Forschungszulage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Erstprüfung Ihres Förderpotenzials ist kostenfrei und unverbindlich; das Honorar entsteht ausschließlich als prozentualer Anteil einer tatsächlich ausgezahlten Forschungszulage. Grantonomy arbeitet damit vollständig erfolgsbasiert: Bleibt eine Auszahlung aus, bleibt es bei der kostenfreien Prüfung. Im Erfolgshonorar sind bereits enthalten: das eine Prozent für die Pflanzflächen der Robin Gut Stiftung gUG sowie die Medienleistungen der Robin Gut Media GmbH je nach Stufe. Den konkreten Prozentsatz nennen wir Ihnen mit dem Ergebnis der Potenzialanalyse, also bevor Sie sich entscheiden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer stellt den Antrag auf Forschungszulage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Den Antrag bereitet Grantonomy für Sie vor und führt das Verfahren bei der Bescheinigungsstelle Forschungszulage (BSFZ). Wir identifizieren Ihre förderfähigen Vorhaben, bereiten sie technisch auf und formulieren sie in der Sprache, die die BSFZ erwartet. Den steuerlichen Antrag beim Finanzamt stimmen wir mit Ihrem Steuerberater ab und liefern die Unterlagen zu; die steuerliche Beurteilung bleibt bei Ihrem Berater."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie verbindet Robin Gut die Forschungszulage mit Baumpflanzungen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Prozent Ihrer ausgezahlten Forschungszulage fließt aus dem Erfolgshonorar an die Robin Gut Stiftung gUG (haftungsbeschränkt) und wird dort in Aufforstungsflächen in Deutschland investiert. Die Stiftung pflanzt mit standortgerechten Mischbaumarten, gemeinsam mit Forstbetrieben vor Ort, auf Flächen, die nach Trockenheit, Sturm oder Käferbefall neu bestockt werden müssen. Sie erhalten eine Pflanzurkunde mit Standort, Baumarten und Hektarangabe sowie Bildmaterial von Ihrer Fläche. Ab der zweiten Stufe produziert die Robin Gut Media GmbH daraus eine Podcastfolge, ab der dritten Stufe einen Image- oder Unternehmensfilm. Der Anteil ist im Erfolgshonorar bereits enthalten und lässt Ihre Auszahlung in voller Höhe bestehen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lohnt sich eine Zweitmeinung, wenn die Forschungszulage bereits beantragt ist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Zweitmeinung lohnt sich vor allem dann, wenn der bisherige Antrag nur einen Teil Ihrer Vorhaben oder Kostenarten erfasst hat – das ist häufig der Fall. Wir prüfen, ob alle förderfähigen Projekte, Personalstunden, Eigenleistungen und Auftragsforschungsanteile ausgeschöpft sind und ob die Dokumentation einer Betriebsprüfung standhält. Für noch offene Wirtschaftsjahre lässt sich ein Antrag im Regelfall ergänzen oder neu stellen. Künftige Anträge verbinden Sie dann direkt mit den Pflanzflächen und den Medienleistungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sicher ist die Forschungszulage bei einer Betriebsprüfung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Bescheinigung der Bescheinigungsstelle Forschungszulage (BSFZ) wirkt als Grundlagenbescheid: Das Finanzamt ist an ihre Feststellung zur Förderfähigkeit des Vorhabens gebunden. Damit steht der geförderte Sachverhalt bereits vor der Festsetzung fest. Wir bauen die technische und zeitliche Dokumentation so auf, dass Zuordnung, Stundennachweis und fachliche Begründung auch Jahre später nachvollziehbar bleiben. Die Beurteilung im Einzelfall obliegt den zuständigen Stellen."
+      }
+    }
+  ]
+}

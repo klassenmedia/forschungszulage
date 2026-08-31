@@ -1,0 +1,196 @@
+<style>
+/* ═══════════════════════════════════════════════
+   KREISLAUF-GRAFIK — Förderung → Kooperation → Baumpflanzung
+   Zwei Varianten: Kreis ab 700px, Stapel darunter
+   ═══════════════════════════════════════════════ */
+.kreis-desktop,.kreis-mobil{width:100%;margin:0 auto}
+.kreis-desktop{display:none;max-width:960px}
+.kreis-mobil{display:block;max-width:460px}
+@media(min-width:700px){
+  .kreis-desktop{display:block}
+  .kreis-mobil{display:none}
+}
+.kreis-desktop svg,.kreis-mobil svg{width:100%;height:auto;display:block;font-family:inherit}
+
+/* ── Grundlinien ── */
+.kl-track{fill:none;stroke:var(--border);stroke-width:2}
+
+/* ── Laufender Lichtpunkt ── */
+.kl-pulse{
+  fill:none;stroke:var(--lime-brand);stroke-width:4;stroke-linecap:round;
+  stroke-dasharray:52 1079;
+  animation:kl-run 10s linear infinite;
+}
+.kl-pulse-soft{
+  fill:none;stroke:var(--lime-brand);stroke-width:12;stroke-linecap:round;
+  stroke-dasharray:95 1036;opacity:.18;
+  animation:kl-run 10s linear infinite;
+}
+@keyframes kl-run{
+  from{stroke-dashoffset:0}
+  to{stroke-dashoffset:-1131}
+}
+
+/* ── Mitte ── */
+.kl-core{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
+.kl-core-halo{
+  fill:var(--lime-brand);opacity:.10;
+  transform-origin:center;transform-box:fill-box;
+  animation:kl-breathe 4.5s ease-in-out infinite;
+}
+@keyframes kl-breathe{
+  0%,100%{transform:scale(1);opacity:.10}
+  50%{transform:scale(1.09);opacity:.20}
+}
+.kl-percent{fill:var(--lime);font-size:64px;font-weight:800;letter-spacing:-.02em}
+.kl-percent-sub{fill:var(--text3);font-size:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+/* ── Stationskarten ── */
+.kl-card{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
+.kl-num-chip{fill:var(--lime-brand)}
+.kl-num{fill:var(--on-lime,var(--bg));font-size:15px;font-weight:800;letter-spacing:.02em}
+.kl-title{fill:var(--text);font-size:20px;font-weight:700;letter-spacing:-.01em}
+.kl-body{fill:var(--text2);font-size:16px;font-weight:400}
+.kl-arrow{fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kl-connect{stroke:var(--border2);stroke-width:2;stroke-linecap:round}
+
+/* ── Mobile Stapel ── */
+.kl-stack-line{stroke:var(--border2);stroke-width:2;stroke-linecap:round;fill:none}
+.kl-stack-flow{
+  fill:none;stroke:var(--lime-brand);stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:70 700;
+  animation:kl-flow 9s linear infinite;
+}
+@keyframes kl-flow{
+  from{stroke-dashoffset:770}
+  to{stroke-dashoffset:0}
+}
+.kl-m-title{fill:var(--text);font-size:19px;font-weight:700}
+.kl-m-body{fill:var(--text2);font-size:14px}
+.kl-m-percent{fill:var(--lime);font-size:38px;font-weight:800}
+.kl-m-sub{fill:var(--text3);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+@media(prefers-reduced-motion:reduce){
+  .kl-pulse,.kl-pulse-soft,.kl-core-halo,.kl-stack-flow{animation:none}
+  .kl-pulse,.kl-pulse-soft{stroke-dasharray:none;opacity:.28}
+  .kl-stack-flow{stroke-dasharray:none;opacity:.5}
+}
+
+/* ── Mobile Variante: echtes HTML statt SVG, damit die Schrift lesbar bleibt ── */
+.klm-liste{list-style:none;margin:0;padding:0;position:relative}
+.klm-liste::before{
+  content:"";position:absolute;left:19px;top:34px;bottom:34px;width:2px;
+  background:linear-gradient(to bottom,var(--lime-brand),var(--border));
+}
+.klm-schritt{display:flex;gap:16px;padding-bottom:26px;position:relative}
+.klm-schritt:last-child{padding-bottom:0}
+.klm-nr{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  background:var(--lime-brand);color:var(--on-lime);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;letter-spacing:.02em;
+  position:relative;z-index:2;
+}
+.klm-text{padding-top:7px;min-width:0}
+.klm-text strong{display:block;font-size:17px;font-weight:800;color:var(--text);margin-bottom:6px}
+.klm-text p{font-size:14.5px;color:var(--text2);line-height:1.65;margin:0}
+.klm-kreis{
+  margin:0 auto 28px;width:132px;height:132px;border-radius:50%;
+  border:3px solid var(--lime-brand);background:var(--lime-dim);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+}
+.klm-prozent{font-size:34px;font-weight:900;color:var(--lime);line-height:1;letter-spacing:-.02em}
+.klm-je{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+</style>
+
+<!-- ═══════════ VARIANTE A — Kreis (ab 700px) ═══════════ -->
+<div class="kreis-desktop">
+<svg viewBox="0 0 960 720" role="img" aria-labelledby="kl-t kl-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="kl-t">Kreislauf: Von der Forschungszulage zur gepflanzten Baumreihe</title>
+  <desc id="kl-d">Drei Stationen im Uhrzeigersinn. Erstens Förderung: Das Unternehmen erhält die Forschungszulage vom Staat. Zweitens Kooperation: Ein Prozent der Fördersumme fließt aus dem Erfolgshonorar in die Kooperation. Drittens Baumpflanzung: Die Robin Gut Stiftung gUG pflanzt, Robin Gut Media produziert den Content. In der Mitte steht ein Prozent je Auszahlung.</desc>
+
+  <!-- Kreisbahn: Mittelpunkt 480/330, r=180, Umfang ca. 1131 -->
+  <circle class="kl-track" cx="480" cy="330" r="180"/>
+  <circle class="kl-pulse-soft" cx="480" cy="330" r="180" transform="rotate(-90 480 330)"/>
+  <circle class="kl-pulse" cx="480" cy="330" r="180" transform="rotate(-90 480 330)"/>
+
+  <!-- Richtungspfeile, tangential im Uhrzeigersinn -->
+  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(635.9 240) rotate(60)"/>
+  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(480 510) rotate(180)"/>
+  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(324.1 240) rotate(300)"/>
+
+  <!-- Anschlusspunkte auf der Bahn + Verbinder zu den Karten -->
+  <line class="kl-connect" x1="480" y1="150" x2="480" y2="142"/>
+  <line class="kl-connect" x1="635.9" y1="420" x2="676" y2="536"/>
+  <line class="kl-connect" x1="324.1" y1="420" x2="284" y2="536"/>
+  <circle cx="480" cy="150" r="6.5" fill="var(--lime-brand)"/>
+  <circle cx="635.9" cy="420" r="6.5" fill="var(--lime-brand)"/>
+  <circle cx="324.1" cy="420" r="6.5" fill="var(--lime-brand)"/>
+
+  <!-- ── Mitte: 1 % ── -->
+  <circle class="kl-core-halo" cx="480" cy="330" r="106"/>
+  <circle class="kl-core" cx="480" cy="330" r="88"/>
+  <text class="kl-percent" x="480" y="322" text-anchor="middle" dominant-baseline="middle">1 %</text>
+  <text class="kl-percent-sub" x="480" y="368" text-anchor="middle">je Auszahlung</text>
+
+  <!-- ═══ 01 Förderung — oben ═══ -->
+  <g>
+    <rect class="kl-card" x="318" y="18" width="324" height="124" rx="20"/>
+    <rect class="kl-num-chip" x="342" y="42" width="44" height="25" rx="12.5"/>
+    <text class="kl-num" x="364" y="59.5" text-anchor="middle">01</text>
+    <text class="kl-title" x="398" y="61">Förderung</text>
+    <text class="kl-body" x="342" y="96">Das Unternehmen erhält die</text>
+    <text class="kl-body" x="342" y="120">Forschungszulage vom Staat.</text>
+  </g>
+
+  <!-- ═══ 02 Kooperation — rechts unten ═══ -->
+  <g>
+    <rect class="kl-card" x="564" y="536" width="352" height="150" rx="20"/>
+    <rect class="kl-num-chip" x="588" y="560" width="44" height="25" rx="12.5"/>
+    <text class="kl-num" x="610" y="577.5" text-anchor="middle">02</text>
+    <text class="kl-title" x="644" y="579">Kooperation</text>
+    <text class="kl-body" x="588" y="614">1 % der Fördersumme fließt aus</text>
+    <text class="kl-body" x="588" y="638">dem Erfolgshonorar in die</text>
+    <text class="kl-body" x="588" y="662">Kooperation.</text>
+  </g>
+
+  <!-- ═══ 03 Baumpflanzung — links unten ═══ -->
+  <g>
+    <rect class="kl-card" x="44" y="536" width="352" height="150" rx="20"/>
+    <rect class="kl-num-chip" x="68" y="560" width="44" height="25" rx="12.5"/>
+    <text class="kl-num" x="90" y="577.5" text-anchor="middle">03</text>
+    <text class="kl-title" x="124" y="579">Baumpflanzung</text>
+    <text class="kl-body" x="68" y="614">Die Robin Gut Stiftung gUG</text>
+    <text class="kl-body" x="68" y="638">pflanzt, Robin Gut Media</text>
+    <text class="kl-body" x="68" y="662">produziert den Content.</text>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ VARIANTE B — Stapel (unter 700px) ═══════════ -->
+<div class="kreis-mobil">
+  <p class="klm-kreis"><span class="klm-prozent">1&thinsp;%</span><span class="klm-je">je Auszahlung</span></p>
+  <ol class="klm-liste">
+    <li class="klm-schritt">
+      <span class="klm-nr" aria-hidden="true">01</span>
+      <div class="klm-text">
+        <strong>Förderung</strong>
+        <p>Das Unternehmen erhält die Forschungszulage vom Staat.</p>
+      </div>
+    </li>
+    <li class="klm-schritt">
+      <span class="klm-nr" aria-hidden="true">02</span>
+      <div class="klm-text">
+        <strong>Kooperation</strong>
+        <p>Ein Prozent der Fördersumme fließt aus dem Erfolgshonorar in die Kooperation.</p>
+      </div>
+    </li>
+    <li class="klm-schritt">
+      <span class="klm-nr" aria-hidden="true">03</span>
+      <div class="klm-text">
+        <strong>Baumpflanzung</strong>
+        <p>Die Robin Gut Stiftung gUG pflanzt, Robin Gut Media produziert den Content.</p>
+      </div>
+    </li>
+  </ol>
+</div>

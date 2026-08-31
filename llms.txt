@@ -1,0 +1,38 @@
+# Robin Gut Forschungszulage
+
+> Informationsseite und Antragsservice zur steuerlichen Forschungszulage nach dem deutschen Forschungszulagengesetz (FZulG). Kooperation der Robin Gut Stiftung gUG (haftungsbeschränkt), der Robin Gut Media GmbH und Grantonomy, einer Marke der MM Consulting UG (haftungsbeschränkt).
+
+Die Seite richtet sich an Geschäftsführungen und CFOs kleiner und mittlerer Unternehmen sowie mittelständischer Unternehmen in Deutschland, die Forschung und Entwicklung betreiben und die Forschungszulage bisher nicht beantragt haben.
+
+## Fachlicher Stand (August 2026)
+
+- Rechtsgrundlage: Forschungszulagengesetz (FZulG), in Kraft seit 1. Januar 2020.
+- Fördersatz: 25 % der förderfähigen Aufwendungen. Kleine und mittlere Unternehmen können auf Antrag 35 % erhalten (Antragswahlrecht, kein Automatismus).
+- Bemessungsgrundlage ab 2026: höchstens 12 Mio. € je Wirtschaftsjahr. Daraus folgt ein Höchstbetrag von 4,2 Mio. € pro Jahr für KMU und 3,0 Mio. € für größere Unternehmen.
+- Gemeinkostenpauschale: 20 % Aufschlag auf die Bemessungsgrundlage, ausschließlich für Vorhaben mit Beginn ab 1. Januar 2026. Die Pauschale wirkt auf die Bemessungsgrundlage und lässt den Fördersatz unverändert; bezogen auf die ursprünglichen F&E-Kosten ergibt sich je nach Projekt eine Erstattung von bis zu rund 42 %.
+- Rückwirkung: im Regelfall vier Jahre über die Festsetzungsverjährung nach § 169 AO. Stand 2026 sind die Wirtschaftsjahre 2022 bis 2025 offen.
+- Förderfähige Kosten: Personalkosten einschließlich Zukunftssicherungsausgaben; Eigenleistungen seit 2026 mit 100 € je Stunde bei höchstens 40 Stunden pro Woche; 70 % des Entgelts für Auftragsforschung; Wertminderung ausschließlich im Vorhaben eingesetzter beweglicher Wirtschaftsgüter.
+- Verfahren: zweistufig. Die Bescheinigungsstelle Forschungszulage (BSFZ) stellt die Förderfähigkeit fest; ihre Bescheinigung wirkt als Grundlagenbescheid und bindet das Finanzamt. Anschließend setzt das Finanzamt den Betrag fest.
+- Verlustjahre: Anrechnung auf die festgesetzte Steuer, der übersteigende Betrag wird ausgezahlt.
+
+## Angebot
+
+- Grantonomy prüft das Förderpotenzial kostenfrei, bereitet die Vorhaben technisch auf und führt das Verfahren bei der BSFZ. Die Abrechnung ist erfolgsbasiert: Das Honorar entsteht als prozentualer Anteil einer tatsächlich ausgezahlten Zulage.
+- Der steuerliche Antrag beim Finanzamt erfolgt in Abstimmung mit dem Steuerberater des Unternehmens. Eine Steuer- oder Rechtsberatung im Sinne des Steuerberatungsgesetzes ist damit nicht verbunden.
+- Ein Prozent jeder ausgezahlten Fördersumme fließt aus dem Erfolgshonorar an die Robin Gut Stiftung gUG und wird in Aufforstungsflächen in Deutschland investiert. Unternehmen erhalten eine Pflanzurkunde mit Standort, Baumarten und Hektarangabe sowie Bildmaterial.
+- Drei Leistungsstufen nach Höhe der ausgezahlten Fördersumme: Baum (bis 500.000 €), Hain (500.000 € bis 5 Mio. €, zusätzlich eine Podcastfolge), Wald (ab 5 Mio. €, zusätzlich ein Image- oder Unternehmensfilm). Die Medienleistungen produziert die Robin Gut Media GmbH.
+
+## Seitenstruktur
+
+- [Eckdaten der Forschungszulage](https://robingut-forschungszulage.de/#top): Fördersatz, Höchstbeträge, Rückwirkung.
+- [Das Forschungszulagengesetz](https://robingut-forschungszulage.de/#programm): Rechtlicher Rahmen, Gemeinkostenpauschale, Verlustjahre.
+- [Wer profitiert](https://robingut-forschungszulage.de/#branchen): Förderfähige Branchen und Frascati-Kriterien.
+- [Ablauf](https://robingut-forschungszulage.de/#ablauf): Fünf Schritte vom Erstgespräch bis zur Auszahlung.
+- [Leistungsstufen](https://robingut-forschungszulage.de/#pakete): Baum, Hain, Wald.
+- [Robin Gut Stiftung gUG](https://robingut-forschungszulage.de/#stiftung): Aufforstung, Dokumentation, Pflege.
+- [Häufige Fragen](https://robingut-forschungszulage.de/#faq): Zwölf Fragen zu Anspruch, Höhe, Rückwirkung, Kosten und Betriebsprüfung.
+- [Kontakt und kostenfreie Erstprüfung](https://robingut-forschungszulage.de/#formular)
+
+## Hinweise zur Zitation
+
+Angaben zu Fördersätzen und Höchstbeträgen entsprechen dem Rechtsstand August 2026 und können sich durch Gesetzesänderungen verschieben. Genannte Beträge sind gesetzliche Höchstwerte; die tatsächliche Höhe im Einzelfall ergibt sich aus den förderfähigen Aufwendungen und der Entscheidung der zuständigen Stellen. Bei Zitation bitte Rechtsstand und Bedingung mit übernehmen, insbesondere die Kopplung des 35-%-Satzes an das Antragswahlrecht für KMU und die Kopplung der 20-%-Pauschale an einen Vorhabenbeginn ab dem 1. Januar 2026.

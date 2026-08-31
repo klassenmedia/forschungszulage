@@ -1,0 +1,228 @@
+<script>
+(function(){
+  'use strict';
+
+  /* ── Sanftes Scrollen, per Delegation statt Inline-Handler ── */
+  var NAV_OFFSET = 72;
+  function scrollZu(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var y = el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+    window.scrollTo({top:y, behavior:'smooth'});
+  }
+
+  document.addEventListener('click', function(e){
+    var top = e.target.closest('[data-scroll-top]');
+    if(top){ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); return; }
+
+    var ziel = e.target.closest('[data-scroll]');
+    if(ziel){ e.preventDefault(); schliesseMenue(); scrollZu(ziel.dataset.scroll); return; }
+
+    if(e.target.closest('[data-menu-close]')){ schliesseMenue(); return; }
+
+    var anker = e.target.closest('a[href^="#"]');
+    if(anker){
+      var id = anker.getAttribute('href').slice(1);
+      if(id && document.getElementById(id)){
+        e.preventDefault();
+        schliesseMenue();
+        scrollZu(id);
+      }
+    }
+  });
+
+  /* ── Theme-Umschalter ── */
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var dark = root.getAttribute('data-theme') === 'dark';
+      if(dark){ root.removeAttribute('data-theme'); }
+      else { root.setAttribute('data-theme','dark'); }
+      try{ localStorage.setItem('rg-theme', dark ? 'light' : 'dark'); }catch(e){}
+    });
+  }
+
+  /* ── Navigation: Schatten beim Scrollen ── */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  /* ── Mobiles Menü mit Fokusfalle ──
+     Solange das Menü offen ist, bleibt der Tastaturfokus darin gefangen —
+     sonst tabbt man unsichtbar in die Formularfelder dahinter. */
+  var burger = document.getElementById('hamburger');
+  var menu = document.getElementById('mobile-menu');
+
+  function menueOffen(){ return menu && menu.classList.contains('open'); }
+
+  function schliesseMenue(){
+    if(!menu || !menueOffen()) return;
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    burger.focus();
+  }
+
+  function oeffneMenue(){
+    if(!menu) return;
+    menu.classList.add('open');
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    menu.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    var erstes = menu.querySelector('a, button');
+    if(erstes) erstes.focus();
+  }
+
+  if(burger && menu){
+    burger.addEventListener('click', function(){
+      if(menueOffen()) schliesseMenue(); else oeffneMenue();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(!menueOffen()) return;
+      if(e.key === 'Escape'){ schliesseMenue(); return; }
+      if(e.key !== 'Tab') return;
+
+      var fokussierbar = menu.querySelectorAll('a[href], button:not([disabled])');
+      if(!fokussierbar.length) return;
+      var erstes = fokussierbar[0];
+      var letztes = fokussierbar[fokussierbar.length - 1];
+
+      if(e.shiftKey && document.activeElement === erstes){
+        e.preventDefault(); letztes.focus();
+      } else if(!e.shiftKey && document.activeElement === letztes){
+        e.preventDefault(); erstes.focus();
+      }
+    });
+  }
+
+  /* ── Einblenden beim Scrollen ── */
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var fadeObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
+      });
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+    fadeEls.forEach(function(el){ fadeObs.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* ── Prozessschritte entlang der Linie aktivieren ── */
+  var stepsEl = document.getElementById('steps');
+  var lineFill = document.getElementById('step-line-fill');
+  var steps = document.querySelectorAll('[data-step]');
+  function updateSteps(){
+    if(!stepsEl || !lineFill) return;
+    var r = stepsEl.getBoundingClientRect();
+    var progress = Math.min(1, Math.max(0, (window.innerHeight * 0.62 - r.top) / r.height));
+    lineFill.style.height = (progress * 100) + '%';
+    steps.forEach(function(step){
+      var sr = step.getBoundingClientRect();
+      if(sr.top + sr.height / 2 < window.innerHeight * 0.78) step.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', updateSteps, {passive:true});
+  window.addEventListener('resize', updateSteps);
+  updateSteps();
+
+  /* ── FAQ-Akkordeon ── */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = this.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){
+        item.classList.add('open');
+        this.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ── Zahlen hochzählen ── */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateCounter(el){
+    var target = parseFloat(el.dataset.target);
+    var suffix = el.dataset.suffix || '';
+    var decimal = parseInt(el.dataset.decimal, 10) || 0;
+    function finish(){
+      el.innerHTML = (decimal ? target.toFixed(decimal).replace('.', ',') : target) + suffix;
+    }
+    if(reduceMotion){ finish(); return; }
+    var duration = 1600, start = null;
+    function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var val = target * easeOut(p);
+      el.innerHTML = (decimal ? val.toFixed(decimal).replace('.', ',') : Math.round(val)) + suffix;
+      if(p < 1) requestAnimationFrame(step); else finish();
+    }
+    requestAnimationFrame(step);
+  }
+  /* Die Zielwerte stehen im HTML, damit sie auch ohne JavaScript lesbar sind.
+     Erst beim Sichtbarwerden wird auf 0 zurückgesetzt und hochgezählt. */
+  var counters = document.querySelectorAll('.z-num[data-target]');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var seen = new WeakSet();
+    var cObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !seen.has(e.target)){
+          seen.add(e.target);
+          animateCounter(e.target);
+        }
+      });
+    }, {threshold:0.4});
+    counters.forEach(function(el){ cObs.observe(el); });
+  }
+
+  /* ── Formular ──
+     Noch ohne Versand: zeigt die Bestätigung an.
+     Anbindung an Mailversand folgt separat. */
+  var form = document.getElementById('anfrage');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var pflicht = ['f-name','f-firma','f-mail'];
+      var fehlt = false;
+      pflicht.forEach(function(id){
+        var f = document.getElementById(id);
+        if(!f.value.trim()){
+          f.style.borderColor = '#C4462F';
+          fehlt = true;
+        } else {
+          f.style.borderColor = '';
+        }
+      });
+      var mail = document.getElementById('f-mail');
+      if(mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())){
+        mail.style.borderColor = '#C4462F';
+        fehlt = true;
+      }
+      if(fehlt) return;
+
+      form.style.display = 'none';
+      var danke = document.getElementById('danke');
+      danke.style.display = 'block';
+      danke.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  }
+
+  /* ── Hero-Video bei reduzierter Bewegung anhalten ── */
+  if(reduceMotion){
+    var vid = document.getElementById('hero-video');
+    if(vid){ vid.pause(); vid.removeAttribute('autoplay'); }
+  }
+})();
+</script>
+</body>
+</html>
