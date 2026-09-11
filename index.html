@@ -106,7 +106,7 @@
   "about": { "@id": "https://robingut-forschungszulage.de/#service" },
   "inLanguage": "de-DE",
   "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
+  "dateModified": "2026-09-11",
   "primaryImageOfPage": {
     "@type": "ImageObject",
     "url": "https://robingut-forschungszulage.de/hero-poster.jpg"
@@ -286,7 +286,11 @@ unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --shadow-s:0 1px 2px rgba(27,33,19,.05),0 10px 28px -14px rgba(27,33,19,.16);
   --shadow-m:0 2px 6px rgba(27,33,19,.07),0 24px 52px -26px rgba(27,33,19,.26);
 
-  --hero-tint:rgba(251,252,247,0.55);
+  --hero-tint:rgba(251,252,247,0.32);
+  --hero-textshadow:rgba(251,252,247,.9);
+  --hero-lesehilfe:rgba(251,252,247,.55);
+  --hero-sub-text:#3C452F;
+  --hero-micro-text:#4A5340;
   --hero-grad:linear-gradient(135deg,#E9F0D6 0%,#F4F8EA 45%,#E9F0D6 100%);
   --logo-filter:none;
   --footer-logo-opacity:0.75;
@@ -330,7 +334,11 @@ unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --shadow-s:0 4px 24px rgba(0,0,0,.35);
   --shadow-m:0 16px 48px rgba(0,0,0,.5);
 
-  --hero-tint:rgba(11,13,8,0.45);
+  --hero-tint:rgba(11,13,8,0.34);
+  --hero-textshadow:rgba(7,11,4,.75);
+  --hero-lesehilfe:rgba(7,11,4,.62);
+  --hero-sub-text:#EEF3E2;
+  --hero-micro-text:#D6DEC6;
   --hero-grad:linear-gradient(135deg,#0B1A06 0%,#152007 45%,#0B1A06 100%);
   --logo-filter:none;
   --footer-logo-opacity:0.45;
@@ -458,15 +466,19 @@ nav.scrolled{
 .hero-media video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;display:block;z-index:1;
-  opacity:.5;transition:opacity .3s ease;
+  opacity:.8;transition:opacity .3s ease;
 }
-:root:not([data-theme="dark"]) .hero-media video{opacity:.30}
+:root:not([data-theme="dark"]) .hero-media video{opacity:.62}
 .hero-veil{position:absolute;inset:0;z-index:2;background:var(--hero-tint);pointer-events:none}
+/* Zweite Lage: dunkelt nur die linke obere Hälfte ab, wo der Text steht —
+   das Video bleibt rechts und unten sichtbar, der Kontrast bleibt AA. */
+.hero-veil::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--hero-lesehilfe) 0%,var(--hero-lesehilfe) 34%,transparent 72%)}
 :root:not([data-theme="dark"]) .hero-veil{
   background:linear-gradient(180deg,
-    rgba(251,252,247,.78) 0%,
-    rgba(251,252,247,.62) 45%,
-    rgba(251,252,247,.86) 100%);
+    rgba(251,252,247,.58) 0%,
+    rgba(251,252,247,.34) 45%,
+    rgba(251,252,247,.72) 100%);
 }
 /* Nur die vertikalen Abstände setzen — der seitliche Rand kommt aus .wrap */
 .hero-inner{position:relative;z-index:3;padding-block:104px 68px}
@@ -488,7 +500,7 @@ nav.scrolled{
 
 .hero-headline{
   margin-top:0;
-  font-size:clamp(27px, 5.6vw, 56px);
+  font-size:clamp(29px, 6vw, 56px);
   font-weight:900;line-height:1.08;
   letter-spacing:-.03em;margin-bottom:var(--sp-4);color:var(--text);
   overflow-wrap:break-word;
@@ -497,9 +509,11 @@ nav.scrolled{
    muss die lange zweite Zeile umbrechen dürfen, sonst sprengt sie den Rand. */
 @media(min-width:768px){.hero-headline .zeile{display:inline-block}}
 .hero-headline em{font-style:normal;color:var(--lime)}
+/* Text steht über dem Video — eigener Schatten statt stärkerem Schleier */
+.hero-headline,.hero-sub{text-shadow:0 1px 18px var(--hero-textshadow)}
 
 .hero-sub{
-  font-size:16px;color:var(--text2);line-height:1.7;
+  font-size:16px;color:var(--hero-sub-text);line-height:1.7;
   margin-bottom:30px;max-width:600px;
 }
 @media(min-width:520px){.eyebrow{font-size:11px;letter-spacing:.14em}}
@@ -509,7 +523,7 @@ nav.scrolled{
   display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;
   align-items:stretch;margin-bottom:18px;max-width:620px;
 }
-.hero-micro{font-size:12.5px;color:var(--text3);letter-spacing:.02em;line-height:1.6}
+.hero-micro{font-size:12.5px;color:var(--hero-micro-text);letter-spacing:.02em;line-height:1.6}
 
 /* ═══════════════ BUTTONS (rund) ═══════════════ */
 .btn-lime,.btn-ghost{
@@ -948,21 +962,22 @@ footer{
     <p class="eyebrow"><span class="blink-dot" aria-hidden="true"></span>Grantonomy &times; Robin Gut Stiftung gUG</p>
 
     <h1 class="hero-headline" id="hero-heading">
-      <span class="zeile">Sie entwickeln.</span><br>
-      <span class="zeile">Wir holen Ihre Forschungszulage.</span><br>
-      <em class="zeile">Und gemeinsam pflanzen wir Bäume.</em>
+      <span class="zeile">Sie arbeiten und <em>entwickeln</em>.</span><br>
+      <span class="zeile">Wir holen Ihre <em>Forschungszulage</em>.</span><br>
+      <span class="zeile">Gemeinsam pflanzen wir <em>Bäume</em>.</span>
     </h1>
 
     <p class="hero-sub">
-      Wer entwickelt, bekommt Geld vom Staat zurück. Das steht so im Gesetz, seit 2020,
-      und gilt für jede Branche. Die meisten Unternehmen lassen es liegen.
+      Unternehmen, die entwickeln und forschen, bekommen Geld vom Staat zurück.
+      Das steht im Gesetz und gilt seit 2020 für jede Branche. Die meisten Unternehmen
+      wissen das nicht und lassen das Potenzial liegen.
     </p>
 
     <div class="hero-cta-row">
       <button class="btn-lime" data-scroll="formular">Förderpotenzial kostenfrei prüfen &rarr;</button>
       <button class="btn-ghost" data-scroll="ablauf">So läuft der Antrag</button>
     </div>
-    <p class="hero-micro">Kostenfreie Prüfung &middot; Honorar erst nach Auszahlung &middot; Antwort in zwei Werktagen</p>
+    <p class="hero-micro">Kostenfreie Prüfung &middot; Honorar erst nach Auszahlung &middot; Antwort innerhalb von 48 Stunden</p>
   </div>
 </section>
 

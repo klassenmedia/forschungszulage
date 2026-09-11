@@ -11,3 +11,7 @@ favicon.png
 
 # Lokale Vorschau-Konfiguration
 .claude/
+
+# lokale Vorschau
+video hero.mp4
+.DS_Store

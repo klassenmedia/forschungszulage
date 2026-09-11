@@ -4,15 +4,19 @@
 .hero-media video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;display:block;z-index:1;
-  opacity:.5;transition:opacity .3s ease;
+  opacity:.8;transition:opacity .3s ease;
 }
-:root:not([data-theme="dark"]) .hero-media video{opacity:.30}
+:root:not([data-theme="dark"]) .hero-media video{opacity:.62}
 .hero-veil{position:absolute;inset:0;z-index:2;background:var(--hero-tint);pointer-events:none}
+/* Zweite Lage: dunkelt nur die linke obere Hälfte ab, wo der Text steht —
+   das Video bleibt rechts und unten sichtbar, der Kontrast bleibt AA. */
+.hero-veil::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--hero-lesehilfe) 0%,var(--hero-lesehilfe) 34%,transparent 72%)}
 :root:not([data-theme="dark"]) .hero-veil{
   background:linear-gradient(180deg,
-    rgba(251,252,247,.78) 0%,
-    rgba(251,252,247,.62) 45%,
-    rgba(251,252,247,.86) 100%);
+    rgba(251,252,247,.58) 0%,
+    rgba(251,252,247,.34) 45%,
+    rgba(251,252,247,.72) 100%);
 }
 /* Nur die vertikalen Abstände setzen — der seitliche Rand kommt aus .wrap */
 .hero-inner{position:relative;z-index:3;padding-block:104px 68px}
@@ -43,9 +47,11 @@
    muss die lange zweite Zeile umbrechen dürfen, sonst sprengt sie den Rand. */
 @media(min-width:768px){.hero-headline .zeile{display:inline-block}}
 .hero-headline em{font-style:normal;color:var(--lime)}
+/* Text steht über dem Video — eigener Schatten statt stärkerem Schleier */
+.hero-headline,.hero-sub{text-shadow:0 1px 18px var(--hero-textshadow)}
 
 .hero-sub{
-  font-size:16px;color:var(--text2);line-height:1.7;
+  font-size:16px;color:var(--hero-sub-text);line-height:1.7;
   margin-bottom:30px;max-width:600px;
 }
 @media(min-width:520px){.eyebrow{font-size:11px;letter-spacing:.14em}}
@@ -55,7 +61,7 @@
   display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;
   align-items:stretch;margin-bottom:18px;max-width:620px;
 }
-.hero-micro{font-size:12.5px;color:var(--text3);letter-spacing:.02em;line-height:1.6}
+.hero-micro{font-size:12.5px;color:var(--hero-micro-text);letter-spacing:.02em;line-height:1.6}
 
 /* ═══════════════ BUTTONS (rund) ═══════════════ */
 .btn-lime,.btn-ghost{
