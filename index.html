@@ -785,7 +785,7 @@ nav.scrolled{
 .fall{
   background:var(--card);border:1px solid var(--border);
   border-radius:var(--radius-card);padding:26px 24px;
-  display:grid;grid-template-rows:auto auto auto;align-content:start;gap:18px;
+  display:grid;grid-template-rows:auto auto 1fr;gap:18px;
   box-shadow:var(--shadow-s);
   transition:transform .25s ease,box-shadow .25s ease;
 }
@@ -813,8 +813,9 @@ nav.scrolled{
   letter-spacing:.04em;
 }
 
-.fall-zitat{margin:0;padding-top:18px;border-top:1px solid var(--border)}
-.fall-zitat p{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.fall-zitat{margin:0;padding-top:18px;border-top:1px solid var(--border);
+  display:flex;flex-direction:column}
+.fall-zitat p{font-size:13.5px;color:var(--text2);line-height:1.65;margin:0 0 12px;flex:1}
 .fall-zitat footer{display:flex;flex-direction:column;gap:1px}
 .fall-zitat footer strong{font-size:13px;font-weight:700;color:var(--text)}
 .fall-zitat footer span{font-size:12px;color:var(--text3)}
@@ -1393,11 +1394,12 @@ body > footer{
 <!-- ═══════════════ FALLSTUDIEN ═══════════════ -->
 <section class="sec fade-in" id="referenzen" aria-labelledby="fall-heading">
   <div class="wrap">
-    <div class="kicker">Bewilligte Anträge</div>
+    <div class="kicker">Stimmen von Grantonomy</div>
     <h2 id="fall-heading">Die meisten Unternehmen wissen nichts von ihrem Glück. <em>Diese schon.</em></h2>
     <p class="lead">
       Kein Schätzwert und keine Modellrechnung: Diese Fördersummen sind bewilligt und
-      ausgezahlt. Die Vorhaben zeigen zugleich, wie weit der Begriff Forschung reicht.
+      ausgezahlt. Drei Beispiele aus den Anträgen, die Grantonomy bislang durchgebracht
+      hat &ndash; sie zeigen zugleich, wie weit der Begriff Forschung reicht.
     </p>
 
     <div class="faelle">
