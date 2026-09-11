@@ -514,11 +514,16 @@ nav.scrolled{
 
 .hero-sub{
   font-size:16px;color:var(--hero-sub-text);line-height:1.7;
-  margin-bottom:30px;max-width:600px;
+  margin-bottom:22px;max-width:600px;
 }
 @media(min-width:520px){.eyebrow{font-size:11px;letter-spacing:.14em}}
 @media(min-width:768px){.hero-sub{font-size:18px}}
 
+.hero-frage{
+  font-size:clamp(17px,3.4vw,21px);font-weight:800;letter-spacing:-.01em;
+  color:var(--lime);margin-bottom:14px;
+  text-shadow:0 1px 18px var(--hero-textshadow);
+}
 .hero-cta-row{
   display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;
   align-items:stretch;margin-bottom:18px;max-width:620px;
@@ -644,7 +649,15 @@ nav.scrolled{
   font-size:clamp(30px,6vw,40px);font-weight:900;letter-spacing:-.03em;
   line-height:1.05;color:var(--text);margin-bottom:12px;
 }
-.rs-text{font-size:14px;color:var(--text2);line-height:1.65}
+.rs-liste{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.rs-liste li{
+  display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+  font-size:13.5px;color:var(--text2);line-height:1.45;
+  padding-bottom:8px;border-bottom:1px solid var(--border2);
+}
+.rs-liste li:last-child{border-bottom:0;padding-bottom:0}
+.rs-wert{font-weight:700;color:var(--text);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rs-text{font-size:13px;color:var(--text3);line-height:1.6}
 .rechnung-disc{
   margin-top:var(--sp-4);font-size:12px;color:var(--text3);
   line-height:1.6;max-width:820px;
@@ -1038,6 +1051,8 @@ footer{
       wissen das nicht und lassen das Potenzial liegen.
     </p>
 
+    <p class="hero-frage">Worauf warten Sie noch?</p>
+
     <div class="hero-cta-row">
       <button class="btn-lime" data-scroll="formular">Förderpotenzial kostenfrei prüfen &rarr;</button>
       <button class="btn-ghost" data-scroll="ablauf">So läuft der Antrag</button>
@@ -1051,7 +1066,7 @@ footer{
   <div class="wrap">
     <div class="zahlen-head fade-in">
       <div class="kicker">Die Eckdaten</div>
-      <h2 class="zahlen-h2">Forschungszulage 2026: Fördersatz und Höchstbeträge</h2>
+      <h2 class="zahlen-h2">Fördersatz und Höchstbeträge bei der Forschungszulage</h2>
     </div>
     <div class="zahlen fade-in" role="region" aria-label="Eckdaten der Forschungszulage">
       <div class="z-item">
@@ -1114,7 +1129,7 @@ footer{
             <td>248.832 €</td>
           </tr>
           <tr class="rechnung-ergebnis">
-            <th scope="row">Forschungszulage, 35 % für KMU</th>
+            <th scope="row">Forschungszulage, 35 % für KMU <span class="tab-note">für das Jahr 2026</span></th>
             <td>rund 87.000 €</td>
           </tr>
         </tbody>
@@ -1123,11 +1138,14 @@ footer{
       <div class="rechnung-summe">
         <p class="rs-label">Über den gesamten Anspruchszeitraum</p>
         <p class="rs-zahl">rund 550.000 €</p>
+        <ul class="rs-liste">
+          <li><span>2022&ndash;2025, vier Jahre nachgeholt</span><span class="rs-wert">je rund 73.000 €</span></li>
+          <li><span>ab 2026, jedes laufende Jahr</span><span class="rs-wert">je rund 87.000 €</span></li>
+        </ul>
         <p class="rs-text">
-          Vier zurückliegende Wirtschaftsjahre lassen sich noch nachholen, ab 2026 kommt
-          jedes laufende Jahr hinzu. Für dieses Musterunternehmen summiert sich das über
-          sieben Wirtschaftsjahre auf einen mittleren sechsstelligen Betrag &ndash; für
-          Arbeit, die ohnehin geleistet wurde.
+          Die Altjahre fallen etwas niedriger aus, weil es die Gemeinkostenpauschale erst
+          für Vorhaben ab 2026 gibt. Über sieben Wirtschaftsjahre steht damit ein mittlerer
+          sechsstelliger Betrag &ndash; für Arbeit, die ohnehin geleistet wurde.
         </p>
       </div>
     </div>

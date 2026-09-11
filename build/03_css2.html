@@ -52,11 +52,16 @@
 
 .hero-sub{
   font-size:16px;color:var(--hero-sub-text);line-height:1.7;
-  margin-bottom:30px;max-width:600px;
+  margin-bottom:22px;max-width:600px;
 }
 @media(min-width:520px){.eyebrow{font-size:11px;letter-spacing:.14em}}
 @media(min-width:768px){.hero-sub{font-size:18px}}
 
+.hero-frage{
+  font-size:clamp(17px,3.4vw,21px);font-weight:800;letter-spacing:-.01em;
+  color:var(--lime);margin-bottom:14px;
+  text-shadow:0 1px 18px var(--hero-textshadow);
+}
 .hero-cta-row{
   display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;
   align-items:stretch;margin-bottom:18px;max-width:620px;
@@ -182,7 +187,15 @@
   font-size:clamp(30px,6vw,40px);font-weight:900;letter-spacing:-.03em;
   line-height:1.05;color:var(--text);margin-bottom:12px;
 }
-.rs-text{font-size:14px;color:var(--text2);line-height:1.65}
+.rs-liste{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.rs-liste li{
+  display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+  font-size:13.5px;color:var(--text2);line-height:1.45;
+  padding-bottom:8px;border-bottom:1px solid var(--border2);
+}
+.rs-liste li:last-child{border-bottom:0;padding-bottom:0}
+.rs-wert{font-weight:700;color:var(--text);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rs-text{font-size:13px;color:var(--text3);line-height:1.6}
 .rechnung-disc{
   margin-top:var(--sp-4);font-size:12px;color:var(--text3);
   line-height:1.6;max-width:820px;
