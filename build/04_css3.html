@@ -34,6 +34,53 @@
   border:1px dashed var(--border2);border-radius:999px;padding:11px 16px;
 }
 
+/* ═══════════════ FALLSTUDIEN ═══════════════ */
+.faelle{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+@media(min-width:640px) and (max-width:919px){.faelle{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:920px){.faelle{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.fall{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-card);padding:26px 24px;
+  display:grid;grid-template-rows:auto auto 1fr;gap:18px;
+  box-shadow:var(--shadow-s);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.fall:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+
+.fall-firma{
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime);margin-bottom:10px;
+}
+.fall-titel{font-size:14.5px;font-weight:600;color:var(--text);line-height:1.5}
+@media(min-width:920px){.fall-kopf{min-height:152px}}
+
+/* Die Fördersumme ist das Argument — sie bekommt die Bühne. */
+.fall-summe{
+  align-self:start;padding:18px 20px;
+  background:var(--lime-dim);border:1px solid var(--border2);border-radius:14px;
+}
+.fall-zahl{
+  display:block;font-size:clamp(27px,4.6vw,33px);font-weight:900;
+  letter-spacing:-.03em;line-height:1.05;color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.fall-lbl{
+  display:block;margin-top:5px;font-size:11.5px;color:var(--text3);
+  letter-spacing:.04em;
+}
+
+.fall-zitat{margin:0;padding-top:18px;border-top:1px solid var(--border)}
+.fall-zitat p{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.fall-zitat footer{display:flex;flex-direction:column;gap:1px}
+.fall-zitat footer strong{font-size:13px;font-weight:700;color:var(--text)}
+.fall-zitat footer span{font-size:12px;color:var(--text3)}
+
+.faelle-note{
+  margin-top:var(--sp-4);font-size:12px;color:var(--text3);
+  line-height:1.6;max-width:760px;
+}
+
 /* ═══════════════ PROZESS ═══════════════ */
 .steps{position:relative;margin-top:var(--sp-5)}
 .step-line{

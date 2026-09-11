@@ -777,6 +777,53 @@ nav.scrolled{
   border:1px dashed var(--border2);border-radius:999px;padding:11px 16px;
 }
 
+/* ═══════════════ FALLSTUDIEN ═══════════════ */
+.faelle{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+@media(min-width:640px) and (max-width:919px){.faelle{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:920px){.faelle{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.fall{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-card);padding:26px 24px;
+  display:grid;grid-template-rows:auto auto 1fr;gap:18px;
+  box-shadow:var(--shadow-s);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.fall:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+
+.fall-firma{
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime);margin-bottom:10px;
+}
+.fall-titel{font-size:14.5px;font-weight:600;color:var(--text);line-height:1.5}
+@media(min-width:920px){.fall-kopf{min-height:152px}}
+
+/* Die Fördersumme ist das Argument — sie bekommt die Bühne. */
+.fall-summe{
+  align-self:start;padding:18px 20px;
+  background:var(--lime-dim);border:1px solid var(--border2);border-radius:14px;
+}
+.fall-zahl{
+  display:block;font-size:clamp(27px,4.6vw,33px);font-weight:900;
+  letter-spacing:-.03em;line-height:1.05;color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.fall-lbl{
+  display:block;margin-top:5px;font-size:11.5px;color:var(--text3);
+  letter-spacing:.04em;
+}
+
+.fall-zitat{margin:0;padding-top:18px;border-top:1px solid var(--border)}
+.fall-zitat p{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.fall-zitat footer{display:flex;flex-direction:column;gap:1px}
+.fall-zitat footer strong{font-size:13px;font-weight:700;color:var(--text)}
+.fall-zitat footer span{font-size:12px;color:var(--text3)}
+
+.faelle-note{
+  margin-top:var(--sp-4);font-size:12px;color:var(--text3);
+  line-height:1.6;max-width:760px;
+}
+
 /* ═══════════════ PROZESS ═══════════════ */
 .steps{position:relative;margin-top:var(--sp-5)}
 .step-line{
@@ -1391,8 +1438,63 @@ footer{
   </div>
 </section>
 
+<!-- ═══════════════ FALLSTUDIEN ═══════════════ -->
+<section class="sec sec-alt fade-in" id="referenzen" aria-labelledby="fall-heading">
+  <div class="wrap">
+    <div class="kicker">Bewilligte Anträge</div>
+    <h2 id="fall-heading">Drei Anträge, die durch sind. <em>Und was sie eingebracht haben.</em></h2>
+    <p class="lead">
+      Kein Schätzwert und keine Modellrechnung: Diese Fördersummen sind bewilligt und
+      ausgezahlt. Die Vorhaben zeigen zugleich, wie weit der Begriff Forschung reicht.
+    </p>
+
+    <div class="faelle">
+      <article class="fall">
+        <div class="fall-kopf">
+          <p class="fall-firma">newsload</p>
+          <p class="fall-titel">Entwicklung eines agentischen Marketing-OS für kleine und mittlere Unternehmen: kanalspezifische Inhaltserzeugung und Distribution</p>
+        </div>
+        <p class="fall-summe"><span class="fall-zahl">930.000&nbsp;€</span><span class="fall-lbl">bewilligte Fördersumme</span></p>
+        <blockquote class="fall-zitat">
+          <p>„Der Zeitaufwand für Forschungszulage hat uns anfangs ehrlich gesagt abgeschreckt. Im Prozess mit Grantonomy war der Zeitaufwand für uns dann minimal und die Umsetzung sehr strukturiert und klar."</p>
+          <footer><strong>Daniel Hutwagner</strong><span>CEO, newsload</span></footer>
+        </blockquote>
+      </article>
+
+      <article class="fall">
+        <div class="fall-kopf">
+          <p class="fall-firma">A4VR</p>
+          <p class="fall-titel">Entwicklung einer komplexen Virtual-Reality-Anwendung mit hohen technischen Anforderungen in Rendering, Interaktionslogik und 3D-Simulation</p>
+        </div>
+        <p class="fall-summe"><span class="fall-zahl">450.000&nbsp;€</span><span class="fall-lbl">bewilligte Fördersumme</span></p>
+        <blockquote class="fall-zitat">
+          <p>„Die Jungs von Grantonomy haben unsere komplexen VR-Entwicklungsprojekte extrem schnell verstanden und daraus einen perfekt strukturierten Forschungszulagen-Antrag gemacht."</p>
+          <footer><strong>Michael Albrecht</strong><span>Geschäftsführer, A4VR</span></footer>
+        </blockquote>
+      </article>
+
+      <article class="fall">
+        <div class="fall-kopf">
+          <p class="fall-firma">Plastic Fischer</p>
+          <p class="fall-titel">Entwicklung eines modularen Flussplastik-Abfangsystems mit lokal adaptierbarer Bauweise, hydrologischer Optimierung und digitalem Impact-Tracking</p>
+        </div>
+        <p class="fall-summe"><span class="fall-zahl">370.000&nbsp;€</span><span class="fall-lbl">bewilligte Fördersumme</span></p>
+        <blockquote class="fall-zitat">
+          <p>„Grantonomy hat unsere Herausforderungen sofort verstanden und den Antrag mit beeindruckender Klarheit strukturiert. Die Ergebnisse waren direkt spürbar."</p>
+          <footer><strong>Karsten Hirsch</strong><span>CEO, Plastic Fischer</span></footer>
+        </blockquote>
+      </article>
+    </div>
+
+    <p class="faelle-note">
+      Referenzen der Grantonomy, veröffentlicht mit Zustimmung der genannten Unternehmen.
+      Die Höhe einer Zulage richtet sich nach den förderfähigen Aufwendungen des Einzelfalls.
+    </p>
+  </div>
+</section>
+
 <!-- ═══════════════ KREISLAUF ═══════════════ -->
-<section class="sec sec-alt fade-in" id="kreislauf" aria-labelledby="kreislauf-heading">
+<section class="sec fade-in" id="kreislauf" aria-labelledby="kreislauf-heading">
   <div class="wrap">
     <div class="kicker">Der Kreislauf</div>
     <h2 id="kreislauf-heading">Von der Fördersumme zur Pflanzfläche</h2>
