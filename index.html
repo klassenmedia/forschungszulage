@@ -1504,7 +1504,9 @@ body > footer{
   0%,100%{transform:scale(1);opacity:.10}
   50%{transform:scale(1.09);opacity:.20}
 }
-.kl-baum{fill:none;stroke:var(--lime);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.kl-stamm{fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.kl-krone{fill:var(--lime-dim);stroke:var(--lime);stroke-width:5;stroke-linejoin:round}
+.kl-krone-vorn{fill:var(--lime-dim)}
 
 /* ── Stationskarten ── */
 .kl-card{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
@@ -1556,11 +1558,11 @@ body > footer{
 .klm-text strong{display:block;font-size:17px;font-weight:800;color:var(--text);margin-bottom:6px}
 .klm-text p{font-size:14.5px;color:var(--text2);line-height:1.65;margin:0}
 .klm-kreis{
-  margin:0 auto 28px;width:132px;height:132px;border-radius:50%;
+  margin:0 auto 28px;width:150px;height:150px;flex:none;border-radius:50%;
   border:3px solid var(--lime-brand);background:var(--lime-dim);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
 }
-.klm-baum-svg{width:72px;height:72px;display:block}
+.klm-baum-svg{width:104px;height:70px;display:block}
 </style>
 
 <!-- ═══════════ VARIANTE A — Kreis (ab 700px) ═══════════ -->
@@ -1587,11 +1589,21 @@ body > footer{
   <!-- ── Mitte: Baum ── -->
   <circle class="kl-core-halo" cx="480" cy="330" r="106"/>
   <circle class="kl-core" cx="480" cy="330" r="88"/>
-  <g class="kl-baum" transform="translate(480 330) scale(1.35)">
-    <path d="M0 48 L0 10" />
-    <path d="M0 22 L-15 7" />
-    <path d="M0 30 L15 15" />
-    <path d="M0 -44 C-26 -44 -40 -26 -40 -8 C-40 10 -24 22 0 22 C24 22 40 10 40 -8 C40 -26 26 -44 0 -44 Z" />
+  <g class="kl-wald" transform="translate(480 330)">
+    <g transform="translate(-44 8) scale(.66)">
+      <path class="kl-stamm" d="M0 44 L0 4"/>
+      <path class="kl-krone" d="M0 -40 C-24 -40 -36 -24 -36 -8 C-36 8 -21 18 0 18 C21 18 36 8 36 -8 C36 -24 24 -40 0 -40 Z"/>
+    </g>
+    <g transform="translate(46 12) scale(.56)">
+      <path class="kl-stamm" d="M0 44 L0 4"/>
+      <path class="kl-krone" d="M0 -40 C-24 -40 -36 -24 -36 -8 C-36 8 -21 18 0 18 C21 18 36 8 36 -8 C36 -24 24 -40 0 -40 Z"/>
+    </g>
+    <g transform="translate(0 -6)">
+      <path class="kl-stamm" d="M0 46 L0 6"/>
+      <path class="kl-stamm" d="M0 18 L-13 5"/>
+      <path class="kl-stamm" d="M0 26 L13 13"/>
+      <path class="kl-krone kl-krone-vorn" d="M0 -42 C-25 -42 -38 -25 -38 -8 C-38 9 -22 20 0 20 C22 20 38 9 38 -8 C38 -25 25 -42 0 -42 Z"/>
+    </g>
   </g>
 
   <!-- ═══ 01 Förderung — oben ═══ -->
@@ -1619,10 +1631,22 @@ body > footer{
 <!-- ═══════════ VARIANTE B — Stapel (unter 700px) ═══════════ -->
 <div class="kreis-mobil">
   <p class="klm-kreis" aria-hidden="true">
-    <svg viewBox="-56 -56 112 112" class="klm-baum-svg"><g class="kl-baum">
-      <path d="M0 48 L0 10"/><path d="M0 22 L-15 7"/><path d="M0 30 L15 15"/>
-      <path d="M0 -44 C-26 -44 -40 -26 -40 -8 C-40 10 -24 22 0 22 C24 22 40 10 40 -8 C40 -26 26 -44 0 -44 Z"/>
-    </g></svg>
+    <svg viewBox="-88 -58 176 116" class="klm-baum-svg">
+      <g transform="translate(-44 8) scale(.66)">
+        <path class="kl-stamm" d="M0 44 L0 4"/>
+        <path class="kl-krone" d="M0 -40 C-24 -40 -36 -24 -36 -8 C-36 8 -21 18 0 18 C21 18 36 8 36 -8 C36 -24 24 -40 0 -40 Z"/>
+      </g>
+      <g transform="translate(46 12) scale(.56)">
+        <path class="kl-stamm" d="M0 44 L0 4"/>
+        <path class="kl-krone" d="M0 -40 C-24 -40 -36 -24 -36 -8 C-36 8 -21 18 0 18 C21 18 36 8 36 -8 C36 -24 24 -40 0 -40 Z"/>
+      </g>
+      <g transform="translate(0 -6)">
+        <path class="kl-stamm" d="M0 46 L0 6"/>
+        <path class="kl-stamm" d="M0 18 L-13 5"/>
+        <path class="kl-stamm" d="M0 26 L13 13"/>
+        <path class="kl-krone kl-krone-vorn" d="M0 -42 C-25 -42 -38 -25 -38 -8 C-38 9 -22 20 0 20 C22 20 38 9 38 -8 C38 -25 25 -42 0 -42 Z"/>
+      </g>
+    </svg>
   </p>
   <ol class="klm-liste">
     <li class="klm-schritt">
