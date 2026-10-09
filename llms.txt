@@ -1,6 +1,6 @@
-# Robin Gut Forschungszulage
+# ROBIN GUT Forschungszulage
 
-> Informationsseite und Antragsservice zur steuerlichen Forschungszulage nach dem deutschen Forschungszulagengesetz (FZulG). Kooperation der Robin Gut Stiftung gUG (haftungsbeschränkt), der Robin Gut Media GmbH und Grantonomy, einer Marke der MM Consulting UG (haftungsbeschränkt).
+> Informationsseite und Antragsservice zur steuerlichen Forschungszulage nach dem deutschen Forschungszulagengesetz (FZulG). Kooperation von ROBIN GUT (Robin Gut Stiftung gUG, haftungsbeschränkt) und der Grantonomy GmbH.
 
 Die Seite richtet sich an Geschäftsführungen und CFOs kleiner und mittlerer Unternehmen sowie mittelständischer Unternehmen in Deutschland, die Forschung und Entwicklung betreiben und die Forschungszulage bisher nicht beantragt haben.
 
@@ -20,7 +20,7 @@ Die Seite richtet sich an Geschäftsführungen und CFOs kleiner und mittlerer Un
 - Grantonomy prüft das Förderpotenzial kostenfrei, bereitet die Vorhaben technisch auf und führt das Verfahren bei der BSFZ. Die Abrechnung ist erfolgsbasiert: Das Honorar entsteht als prozentualer Anteil einer tatsächlich ausgezahlten Zulage.
 - Der steuerliche Antrag beim Finanzamt erfolgt in Abstimmung mit dem Steuerberater des Unternehmens. Eine Steuer- oder Rechtsberatung im Sinne des Steuerberatungsgesetzes ist damit nicht verbunden.
 - Ein Anteil jeder ausgezahlten Fördersumme fließt aus dem Erfolgshonorar an ROBIN GUT und wird in Aufforstungsflächen in Deutschland investiert. Unternehmen erhalten eine Pflanzurkunde mit Standort, Baumarten und Hektarangabe sowie Bildmaterial.
-- Drei Leistungsstufen nach Höhe der ausgezahlten Fördersumme: Baum (bis 500.000 €), Hain (500.000 € bis 5 Mio. €, zusätzlich eine Podcastfolge), Wald (ab 5 Mio. €, zusätzlich ein Image- oder Unternehmensfilm). Die Medienleistungen produziert die Robin Gut Media GmbH.
+- Drei Leistungsstufen nach Höhe der ausgezahlten Fördersumme: Baum (bis 500.000 €), Hain (500.000 € bis 5 Mio. €, zusätzlich eine Podcastfolge), Wald (ab 5 Mio. €, zusätzlich ein Image- oder Unternehmensfilm). Die Medienleistungen produziert ROBIN GUT.
 
 ## Seitenstruktur
 
@@ -29,7 +29,7 @@ Die Seite richtet sich an Geschäftsführungen und CFOs kleiner und mittlerer Un
 - [Wer profitiert](https://robingut-forschungszulage.de/#branchen): Förderfähige Branchen und Frascati-Kriterien.
 - [Ablauf](https://robingut-forschungszulage.de/#ablauf): Fünf Schritte vom Erstgespräch bis zur Auszahlung.
 - [Leistungsstufen](https://robingut-forschungszulage.de/#pakete): Baum, Hain, Wald.
-- [Robin Gut Stiftung gUG](https://robingut-forschungszulage.de/#stiftung): Aufforstung, Dokumentation, Pflege.
+- [ROBIN GUT](https://robingut-forschungszulage.de/#stiftung): Aufforstung, Dokumentation, Pflege.
 - [Häufige Fragen](https://robingut-forschungszulage.de/#faq): Zwölf Fragen zu Anspruch, Höhe, Rückwirkung, Kosten und Betriebsprüfung.
 - [Kontakt und kostenfreie Erstprüfung](https://robingut-forschungszulage.de/#formular)
 
