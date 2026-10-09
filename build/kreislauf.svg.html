@@ -1,6 +1,6 @@
 <style>
 /* ═══════════════════════════════════════════════
-   KREISLAUF-GRAFIK — Förderung → Kooperation → Baumpflanzung
+   KREISLAUF-GRAFIK — Förderung → Baumpflanzung
    Zwei Varianten: Kreis ab 700px, Stapel darunter
    ═══════════════════════════════════════════════ */
 .kreis-desktop,.kreis-mobil{width:100%;margin:0 auto}
@@ -42,8 +42,7 @@
   0%,100%{transform:scale(1);opacity:.10}
   50%{transform:scale(1.09);opacity:.20}
 }
-.kl-percent{fill:var(--lime);font-size:64px;font-weight:800;letter-spacing:-.02em}
-.kl-percent-sub{fill:var(--text3);font-size:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.kl-baum{fill:none;stroke:var(--lime);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 
 /* ── Stationskarten ── */
 .kl-card{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
@@ -99,15 +98,14 @@
   border:3px solid var(--lime-brand);background:var(--lime-dim);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
 }
-.klm-prozent{font-size:34px;font-weight:900;color:var(--lime);line-height:1;letter-spacing:-.02em}
-.klm-je{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+.klm-baum-svg{width:72px;height:72px;display:block}
 </style>
 
 <!-- ═══════════ VARIANTE A — Kreis (ab 700px) ═══════════ -->
 <div class="kreis-desktop">
 <svg viewBox="0 0 960 720" role="img" aria-labelledby="kl-t kl-d" xmlns="http://www.w3.org/2000/svg">
   <title id="kl-t">Kreislauf: Von der Forschungszulage zur gepflanzten Baumreihe</title>
-  <desc id="kl-d">Drei Stationen im Uhrzeigersinn. Erstens Förderung: Das Unternehmen erhält die Forschungszulage vom Staat. Zweitens Kooperation: Ein Prozent der Fördersumme fließt aus dem Erfolgshonorar in die Kooperation. Drittens Baumpflanzung: ROBIN GUT pflanzt die Bäume und produziert den Content. In der Mitte steht ein Prozent je Auszahlung.</desc>
+  <desc id="kl-d">Ein Kreislauf mit zwei Stationen. Oben die Förderung: Das Unternehmen erhält die Forschungszulage vom Staat. Unten die Baumpflanzung: ROBIN GUT pflanzt die Bäume und produziert den Content. In der Mitte ein Baum.</desc>
 
   <!-- Kreisbahn: Mittelpunkt 480/330, r=180, Umfang ca. 1131 -->
   <circle class="kl-track" cx="480" cy="330" r="180"/>
@@ -115,23 +113,24 @@
   <circle class="kl-pulse" cx="480" cy="330" r="180" transform="rotate(-90 480 330)"/>
 
   <!-- Richtungspfeile, tangential im Uhrzeigersinn -->
-  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(635.9 240) rotate(60)"/>
-  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(480 510) rotate(180)"/>
-  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(324.1 240) rotate(300)"/>
+  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(660 330) rotate(90)"/>
+  <path class="kl-arrow" d="M-8 -7 L0 0 L-8 7" transform="translate(300 330) rotate(270)"/>
 
   <!-- Anschlusspunkte auf der Bahn + Verbinder zu den Karten -->
   <line class="kl-connect" x1="480" y1="150" x2="480" y2="142"/>
-  <line class="kl-connect" x1="635.9" y1="420" x2="676" y2="536"/>
-  <line class="kl-connect" x1="324.1" y1="420" x2="284" y2="536"/>
+  <line class="kl-connect" x1="480" y1="510" x2="480" y2="536"/>
   <circle cx="480" cy="150" r="6.5" fill="var(--lime-brand)"/>
-  <circle cx="635.9" cy="420" r="6.5" fill="var(--lime-brand)"/>
-  <circle cx="324.1" cy="420" r="6.5" fill="var(--lime-brand)"/>
+  <circle cx="480" cy="510" r="6.5" fill="var(--lime-brand)"/>
 
-  <!-- ── Mitte: 1 % ── -->
+  <!-- ── Mitte: Baum ── -->
   <circle class="kl-core-halo" cx="480" cy="330" r="106"/>
   <circle class="kl-core" cx="480" cy="330" r="88"/>
-  <text class="kl-percent" x="480" y="322" text-anchor="middle" dominant-baseline="middle">1 %</text>
-  <text class="kl-percent-sub" x="480" y="368" text-anchor="middle">je Auszahlung</text>
+  <g class="kl-baum" transform="translate(480 330) scale(1.35)">
+    <path d="M0 48 L0 10" />
+    <path d="M0 22 L-15 7" />
+    <path d="M0 30 L15 15" />
+    <path d="M0 -44 C-26 -44 -40 -26 -40 -8 C-40 10 -24 22 0 22 C24 22 40 10 40 -8 C40 -26 26 -44 0 -44 Z" />
+  </g>
 
   <!-- ═══ 01 Förderung — oben ═══ -->
   <g>
@@ -143,33 +142,26 @@
     <text class="kl-body" x="342" y="120">Forschungszulage vom Staat.</text>
   </g>
 
-  <!-- ═══ 02 Kooperation — rechts unten ═══ -->
+  <!-- ═══ 02 Baumpflanzung — unten ═══ -->
   <g>
-    <rect class="kl-card" x="564" y="536" width="352" height="150" rx="20"/>
-    <rect class="kl-num-chip" x="588" y="560" width="44" height="25" rx="12.5"/>
-    <text class="kl-num" x="610" y="577.5" text-anchor="middle">02</text>
-    <text class="kl-title" x="644" y="579">Kooperation</text>
-    <text class="kl-body" x="588" y="614">1 % der Fördersumme fließt aus</text>
-    <text class="kl-body" x="588" y="638">dem Erfolgshonorar in die</text>
-    <text class="kl-body" x="588" y="662">Kooperation.</text>
-  </g>
-
-  <!-- ═══ 03 Baumpflanzung — links unten ═══ -->
-  <g>
-    <rect class="kl-card" x="44" y="536" width="352" height="150" rx="20"/>
-    <rect class="kl-num-chip" x="68" y="560" width="44" height="25" rx="12.5"/>
-    <text class="kl-num" x="90" y="577.5" text-anchor="middle">03</text>
-    <text class="kl-title" x="124" y="579">Baumpflanzung</text>
-    <text class="kl-body" x="68" y="614">ROBIN GUT pflanzt</text>
-    <text class="kl-body" x="68" y="638">die Bäume und</text>
-    <text class="kl-body" x="68" y="662">produziert den Content.</text>
+    <rect class="kl-card" x="318" y="536" width="324" height="126" rx="20"/>
+    <rect class="kl-num-chip" x="342" y="560" width="44" height="25" rx="12.5"/>
+    <text class="kl-num" x="364" y="577.5" text-anchor="middle">02</text>
+    <text class="kl-title" x="398" y="579">Baumpflanzung</text>
+    <text class="kl-body" x="342" y="614">ROBIN GUT pflanzt die Bäume</text>
+    <text class="kl-body" x="342" y="638">und produziert den Content.</text>
   </g>
 </svg>
 </div>
 
 <!-- ═══════════ VARIANTE B — Stapel (unter 700px) ═══════════ -->
 <div class="kreis-mobil">
-  <p class="klm-kreis"><span class="klm-prozent">1&thinsp;%</span><span class="klm-je">je Auszahlung</span></p>
+  <p class="klm-kreis" aria-hidden="true">
+    <svg viewBox="-56 -56 112 112" class="klm-baum-svg"><g class="kl-baum">
+      <path d="M0 48 L0 10"/><path d="M0 22 L-15 7"/><path d="M0 30 L15 15"/>
+      <path d="M0 -44 C-26 -44 -40 -26 -40 -8 C-40 10 -24 22 0 22 C24 22 40 10 40 -8 C40 -26 26 -44 0 -44 Z"/>
+    </g></svg>
+  </p>
   <ol class="klm-liste">
     <li class="klm-schritt">
       <span class="klm-nr" aria-hidden="true">01</span>
@@ -180,13 +172,6 @@
     </li>
     <li class="klm-schritt">
       <span class="klm-nr" aria-hidden="true">02</span>
-      <div class="klm-text">
-        <strong>Kooperation</strong>
-        <p>Ein Prozent der Fördersumme fließt aus dem Erfolgshonorar in die Kooperation.</p>
-      </div>
-    </li>
-    <li class="klm-schritt">
-      <span class="klm-nr" aria-hidden="true">03</span>
       <div class="klm-text">
         <strong>Baumpflanzung</strong>
         <p>ROBIN GUT pflanzt die Bäume und produziert den Content.</p>
