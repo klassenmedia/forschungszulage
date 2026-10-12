@@ -22,6 +22,24 @@ Die Seite richtet sich an Geschäftsführungen und CFOs kleiner und mittlerer Un
 - Ein Anteil jeder ausgezahlten Fördersumme fließt aus dem Erfolgshonorar an ROBIN GUT und wird in Aufforstungsflächen in Deutschland investiert. Unternehmen erhalten eine Pflanzurkunde mit Standort, Baumarten und Hektarangabe sowie Bildmaterial.
 - Drei Leistungsstufen nach Höhe der ausgezahlten Fördersumme: Baum (bis 500.000 €), Hain (500.000 € bis 5 Mio. €, zusätzlich eine Podcastfolge), Wald (ab 5 Mio. €, zusätzlich ein Image- oder Unternehmensfilm). Die Medienleistungen produziert ROBIN GUT.
 
+## Belegte Referenzen
+
+Bewilligte und ausgezahlte Forschungszulagen aus Anträgen, die Grantonomy begleitet hat:
+
+- newsload: Entwicklung eines agentischen Marketing-OS für kleine und mittlere Unternehmen, 930.000 €.
+- A4VR: Entwicklung einer Virtual-Reality-Anwendung mit Rendering, Interaktionslogik und 3D-Simulation, 450.000 €.
+- Plastic Fischer: Entwicklung eines modularen Flussplastik-Abfangsystems mit hydrologischer Optimierung, 370.000 €.
+
+Die Spannbreite zeigt, dass förderfähige Forschung und Entwicklung weit über Labore hinausreicht und Softwareentwicklung, Simulation und Anlagenbau einschließt.
+
+## Kontakt
+
+- Anfrageformular auf der Startseite unter https://robingut-forschungszulage.de/#formular
+- Telefon: +49 221 29282931, Montag bis Freitag
+- E-Mail: kontakt@robin-gut.org
+- Anschrift: Robin Gut Stiftung gUG (haftungsbeschränkt), Luxemburger Straße 83, 50674 Köln
+- Die Erstprüfung des Förderpotenzials ist kostenfrei und unverbindlich; eine Antwort erfolgt innerhalb von 48 Stunden.
+
 ## Seitenstruktur
 
 - [Eckdaten der Forschungszulage](https://robingut-forschungszulage.de/#top): Fördersatz, Höchstbeträge, Rückwirkung.

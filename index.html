@@ -19,11 +19,16 @@
 <meta property="og:description" content="25 % Ihrer F&amp;E-Kosten zurück, KMU auf Antrag 35 %. Wir übernehmen den Antrag, Honorar nur bei Erfolg. Und aus dem Honorar wird Wald.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="ROBIN GUT Forschungszulage">
+<meta property="og:image" content="https://robingut-forschungszulage.de/og-bild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wald aus der Vogelperspektive">
 
 <!-- ═══════════════ TWITTER ═══════════════ -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Forschungszulage beantragen: bis zu 4,2 Mio. € für KMU">
 <meta name="twitter:description" content="25 % Ihrer F&amp;E-Kosten zurück, KMU auf Antrag 35 %. Wir übernehmen den Antrag, Honorar nur bei Erfolg.">
+<meta name="twitter:image" content="https://robingut-forschungszulage.de/og-bild.jpg">
 
 <!-- ═══════════════ SCHEMA.ORG ═══════════════ -->
 <script type="application/ld+json">
@@ -37,11 +42,20 @@
   "description": "Gemeinnützige Gesellschaft, die in Deutschland Waldflächen aufforstet und pflegt. Gemeinsam mit Grantonomy führt sie Unternehmen zur steuerlichen Forschungszulage nach FZulG. Ein Anteil jeder ausgezahlten Fördersumme fließt in Pflanzflächen.",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Luxemburger Straße 83",
+    "postalCode": "50674",
+    "addressLocality": "Köln",
+    "addressRegion": "Nordrhein-Westfalen",
     "addressCountry": "DE"
   },
+  "telephone": "+49 221 29282931",
+  "email": "kontakt@robin-gut.org",
+  "sameAs": ["https://robin-gut.org"],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
+    "telephone": "+49 221 29282931",
+    "email": "kontakt@robin-gut.org",
     "availableLanguage": ["German"],
     "areaServed": "DE"
   }
@@ -988,6 +1002,74 @@ nav.scrolled{
   line-height:1.7;text-align:center;
 }
 
+/* ═══════════════ FORMULAR ═══════════════ */
+.fg{margin-bottom:16px}
+.fg-row{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+@media(min-width:640px){.fg-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fg label{
+  display:block;font-size:11px;font-weight:800;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:8px;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:var(--card);
+  border:1.5px solid var(--border);border-radius:var(--radius-field);
+  padding:14px 16px;font-size:15px;font-family:inherit;color:var(--text);
+  outline:none;-webkit-appearance:none;appearance:none;
+  transition:border-color .2s,background .2s,box-shadow .2s;
+}
+.fg select{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236C8E12' stroke-width='2.5' stroke-linecap='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:18px;
+  padding-right:44px;cursor:pointer;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--lime);box-shadow:0 0 0 3px var(--lime-dim);
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--text3)}
+.fg textarea{resize:vertical;min-height:96px;line-height:1.6}
+.fg .req{color:var(--lime)}
+.submit-btn{
+  width:100%;background:var(--lime-brand);color:var(--on-lime);
+  border:none;border-radius:var(--radius-btn);padding:18px 24px;
+  font-size:16px;font-weight:800;cursor:pointer;margin-top:10px;
+  font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px;
+  box-shadow:0 3px 16px rgba(150,190,15,.3);
+  transition:filter .15s,transform .12s,box-shadow .25s;
+}
+.submit-btn:hover{filter:brightness(1.06);box-shadow:0 6px 26px rgba(150,190,15,.42)}
+.submit-btn:active{transform:scale(.99)}
+.dp{font-size:12.5px;color:var(--text3);text-align:center;margin-top:14px;line-height:1.6}
+.dp a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}
+.dp a:hover{text-decoration:none}
+.danke{display:none;text-align:center;padding:46px 20px}
+.danke-ring{
+  width:70px;height:70px;border-radius:50%;
+  border:2.5px solid var(--lime-brand);margin:0 auto 22px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;color:var(--lime);
+}
+.danke-hl{font-size:23px;font-weight:900;margin-bottom:10px;color:var(--text)}
+.danke p{font-size:15.5px;color:var(--text2);line-height:1.68;max-width:460px;margin:0 auto}
+
+/* Bot-Falle: aus dem sichtbaren Bereich geschoben, für Screenreader versteckt. */
+.honig{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-oder{
+  text-align:center;margin:34px 0 16px;font-size:13.5px;
+  font-weight:700;color:var(--text3);
+}
+.form-fehler{
+  margin-top:14px;padding:13px 16px;border-radius:12px;
+  background:rgba(196,70,47,.09);border:1px solid rgba(196,70,47,.3);
+  color:var(--text);font-size:13.5px;line-height:1.55;display:none;
+}
+.submit-btn[disabled]{opacity:.6;cursor:not-allowed}
+.noscript-hinweis{
+  margin-top:14px;padding:13px 16px;border-radius:12px;
+  background:var(--lime-dim);border:1px solid var(--border2);
+  color:var(--text2);font-size:13.5px;line-height:1.55;text-align:center;
+}
+.noscript-hinweis a{color:var(--lime);text-decoration:underline}
+
 /* ═══════════════ FOOTER ═══════════════ */
 body > footer{
   border-top:1px solid var(--border);padding:52px 0;
@@ -1831,6 +1913,101 @@ body > footer{
         Vorhaben förderfähig sind und um welche Größenordnung es geht.
       </p>
 
+      <form id="anfrage" action="anfrage.php" method="post" novalidate>
+        <!-- Bot-Falle: für Menschen unsichtbar, Ausfüllen verwirft die Anfrage. -->
+        <div class="honig" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="zeitstempel" id="f-zeit" value="">
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-name">Ihr Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" placeholder="Max Mustermann" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="fg">
+            <label for="f-firma">Unternehmen <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-firma" name="firma" type="text" placeholder="Musterfirma GmbH" autocomplete="organization" maxlength="120" required>
+          </div>
+        </div>
+
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-branche">Branche</label>
+            <select id="f-branche" name="branche">
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option>Software / IT</option>
+              <option>KI &amp; Machine Learning</option>
+              <option>Maschinenbau / Fertigung</option>
+              <option>Medizintechnik / Pharma</option>
+              <option>Energie / Umwelt</option>
+              <option>Agrar / Lebensmittel</option>
+              <option>Chemie / Kunststoff</option>
+              <option>Bau / Baustoffe</option>
+              <option>Fahrzeugbau / Zulieferer</option>
+              <option>Handwerk</option>
+              <option>Logistik</option>
+              <option>Sonstige</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-ausgaben">F&amp;E-Ausgaben pro Jahr <span style="font-weight:400;opacity:.7">(Schätzung genügt)</span></label>
+            <select id="f-ausgaben" name="ausgaben">
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option>Unter 50.000 €</option>
+              <option>50.000 – 200.000 €</option>
+              <option>200.000 – 500.000 €</option>
+              <option>500.000 € – 1 Mio. €</option>
+              <option>Über 1 Mio. €</option>
+              <option>Weiß ich nicht</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-mail">E-Mail-Adresse <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-mail" name="email" type="email" placeholder="max@musterfirma.de" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="fg">
+            <label for="f-tel">Telefon (optional)</label>
+            <input id="f-tel" name="telefon" type="tel" placeholder="+49 …" autocomplete="tel" maxlength="32">
+          </div>
+        </div>
+
+        <div class="fg">
+          <label for="f-beschr">Woran arbeitet Ihr Unternehmen? <span style="font-weight:400;opacity:.7">(optional)</span></label>
+          <textarea id="f-beschr" name="beschreibung" maxlength="5000" placeholder="Ein paar Stichworte genügen — zum Beispiel: Software für Logistikoptimierung, neue Maschinenkomponente, Rezepturentwicklung …"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" disabled>Kostenfreie Erstprüfung anfragen &rarr;</button>
+        <noscript>
+          <p class="noscript-hinweis">
+            Für das Formular wird JavaScript gebraucht. Ohne das erreichen Sie uns
+            unter <a href="tel:+4922129282931">+49 221 29282931</a> oder
+            <a href="mailto:kontakt@robin-gut.org">kontakt@robin-gut.org</a>.
+          </p>
+        </noscript>
+        <p class="dp">
+          Ihre Angaben verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage. Für die Prüfung
+          Ihres Förderpotenzials geben wir sie an unseren Kooperationspartner Grantonomy, eine Marke
+          der Grantonomy GmbH, weiter. Eine darüber hinausgehende Weitergabe
+          erfolgt ausschließlich mit Ihrer Einwilligung. Näheres in unserer
+          <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+      </form>
+
+      <div class="danke" id="danke" role="alert">
+        <div class="danke-ring" aria-hidden="true">✓</div>
+        <p class="danke-hl">Ihre Anfrage ist angekommen.</p>
+        <p>
+          Sie bekommen gleich eine Bestätigung per Mail, darin auch ein Link zur
+          Terminbuchung. Andernfalls meldet sich Grantonomy innerhalb von zwei
+          Werktagen bei Ihnen.
+        </p>
+      </div>
+
+      <p class="form-oder">Lieber direkt sprechen?</p>
       <div class="kontakt-wege">
         <a class="kontakt-karte" href="tel:+4922129282931">
           <span class="kontakt-ico" aria-hidden="true">📞</span>
@@ -1846,10 +2023,6 @@ body > footer{
         </a>
       </div>
 
-      <p class="kontakt-hinweis">
-        Für die Einschätzung helfen uns Branche, ungefähre F&amp;E-Ausgaben pro Jahr und ein
-        paar Stichworte zu Ihren Entwicklungsprojekten. Die Mailvorlage fragt das bereits ab.
-      </p>
     </div>
   </div>
 </section>
@@ -2077,6 +2250,77 @@ body > footer{
     counters.forEach(function(el){ cObs.observe(el); });
   }
 
+
+  /* ── Anfrageformular ── */
+  var form = document.getElementById('anfrage');
+  if(form){
+    var zeitfeld = document.getElementById('f-zeit');
+    if(zeitfeld){ zeitfeld.value = Math.floor(Date.now() / 1000); }
+
+    // Der Knopf startet gesperrt: ohne JS käme sonst ein Form-POST ohne
+    // Zeitstempel an, den der Server stillschweigend verwirft.
+    var startKnopf = form.querySelector('.submit-btn');
+    if(startKnopf){ startKnopf.disabled = false; }
+
+    var fehlerbox = document.createElement('p');
+    fehlerbox.className = 'form-fehler';
+    fehlerbox.setAttribute('role', 'alert');
+    form.appendChild(fehlerbox);
+
+    function zeigeFehler(text){
+      fehlerbox.textContent = text;
+      fehlerbox.style.display = 'block';
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      fehlerbox.style.display = 'none';
+
+      var fehlt = false;
+      ['f-name','f-firma','f-mail'].forEach(function(id){
+        var feld = document.getElementById(id);
+        var leer = !feld.value.trim();
+        feld.style.borderColor = leer ? '#C4462F' : '';
+        if(leer){ fehlt = true; }
+      });
+
+      var mail = document.getElementById('f-mail');
+      if(mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())){
+        mail.style.borderColor = '#C4462F';
+        fehlt = true;
+      }
+      if(fehlt){
+        zeigeFehler('Bitte prüfen Sie die markierten Felder.');
+        return;
+      }
+
+      var knopf = form.querySelector('.submit-btn');
+      var beschriftung = knopf.innerHTML;
+      knopf.disabled = true;
+      knopf.textContent = 'Wird gesendet …';
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function(antwort){
+          return antwort.json().then(function(daten){
+            return { ok: antwort.ok, meldung: daten.meldung };
+          });
+        })
+        .then(function(ergebnis){
+          if(!ergebnis.ok){
+            throw new Error(ergebnis.meldung || 'Unbekannter Fehler');
+          }
+          form.style.display = 'none';
+          var danke = document.getElementById('danke');
+          danke.style.display = 'block';
+          danke.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function(fehler){
+          knopf.disabled = false;
+          knopf.innerHTML = beschriftung;
+          zeigeFehler(fehler.message || 'Der Versand hat nicht geklappt. Bitte rufen Sie uns an oder schreiben Sie an kontakt@robin-gut.org.');
+        });
+    });
+  }
 
   /* ── Hero-Video bei reduzierter Bewegung anhalten ── */
   if(reduceMotion){
