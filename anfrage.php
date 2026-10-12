@@ -16,7 +16,7 @@ require __DIR__ . '/lib/felder.php';
 
 const EMPFAENGER      = 'marvin@grantonomy.de';
 const KOPIE           = 'kontakt@robin-gut.org';
-const ABSENDER        = 'noreply@robingut-forschungszulage.de';
+const ABSENDER        = 'kontakt@robin-gut.org';
 const ABSENDER_NAME   = 'ROBIN GUT Forschungszulage';
 const ANTWORT_AN      = 'kontakt@robin-gut.org';
 const BETREFF_PRAEFIX = 'Robingut-Anfrage Forschungszulage';

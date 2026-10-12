@@ -67,6 +67,6 @@ Stiftung — und ist nicht zurückholbar.
 
 ## Offen nach dem Deploy
 
-- Postfach `noreply@robingut-forschungszulage.de` muss existieren und versandberechtigt sein.
+- Absender ist kontakt@robin-gut.org. SPF beider Domains verweist auf agenturserver.de (Mittwald), der Versand ist damit gedeckt.
 - `tests/` und `docs/` dürfen nicht auf den Webserver.
 - Marvin über den eingebundenen Terminlink informieren.
