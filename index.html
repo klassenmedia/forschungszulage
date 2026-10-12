@@ -106,7 +106,7 @@
   "about": { "@id": "https://robingut-forschungszulage.de/#service" },
   "inLanguage": "de-DE",
   "datePublished": "2026-08-31",
-  "dateModified": "2026-10-09",
+  "dateModified": "2026-10-12",
   "primaryImageOfPage": {
     "@type": "ImageObject",
     "url": "https://robingut-forschungszulage.de/hero-poster.jpg"
@@ -963,51 +963,30 @@ nav.scrolled{
   font-size:15.5px;color:var(--text2);margin-bottom:34px;
   line-height:1.68;text-align:center;
 }
-.fg{margin-bottom:16px}
-.fg-row{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
-@media(min-width:640px){.fg-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.fg label{
-  display:block;font-size:11px;font-weight:800;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--text3);margin-bottom:8px;
+
+/* ═══════════════ KONTAKTWEGE ═══════════════ */
+.kontakt-wege{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+@media(min-width:560px){.kontakt-wege{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kontakt-karte{
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-card);padding:28px 22px;
+  text-decoration:none;box-shadow:var(--shadow-s);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
 }
-.fg input,.fg select,.fg textarea{
-  width:100%;background:var(--card);
-  border:1.5px solid var(--border);border-radius:var(--radius-field);
-  padding:14px 16px;font-size:15px;font-family:inherit;color:var(--text);
-  outline:none;-webkit-appearance:none;appearance:none;
-  transition:border-color .2s,background .2s,box-shadow .2s;
+.kontakt-karte:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:var(--lime)}
+.kontakt-ico{font-size:30px;line-height:1;margin-bottom:8px}
+.kontakt-label{
+  font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--lime);
 }
-.fg select{
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236C8E12' stroke-width='2.5' stroke-linecap='round'><polyline points='6 9 12 15 18 9'/></svg>");
-  background-repeat:no-repeat;background-position:right 14px center;background-size:18px;
-  padding-right:44px;cursor:pointer;
+.kontakt-wert{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-.01em;word-break:break-word}
+@media(min-width:768px){.kontakt-wert{font-size:19px}}
+.kontakt-zusatz{font-size:13px;color:var(--text3)}
+.kontakt-hinweis{
+  margin-top:var(--sp-4);font-size:14.5px;color:var(--text2);
+  line-height:1.7;text-align:center;
 }
-.fg input:focus,.fg select:focus,.fg textarea:focus{
-  border-color:var(--lime);box-shadow:0 0 0 3px var(--lime-dim);
-}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--text3)}
-.fg textarea{resize:vertical;min-height:96px;line-height:1.6}
-.fg .req{color:var(--lime)}
-.submit-btn{
-  width:100%;background:var(--lime-brand);color:var(--on-lime);
-  border:none;border-radius:var(--radius-btn);padding:18px 24px;
-  font-size:16px;font-weight:800;cursor:pointer;margin-top:10px;
-  font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px;
-  box-shadow:0 3px 16px rgba(150,190,15,.3);
-  transition:filter .15s,transform .12s,box-shadow .25s;
-}
-.submit-btn:hover{filter:brightness(1.06);box-shadow:0 6px 26px rgba(150,190,15,.42)}
-.submit-btn:active{transform:scale(.99)}
-.dp{font-size:12.5px;color:var(--text3);text-align:center;margin-top:14px;line-height:1.6}
-.danke{display:none;text-align:center;padding:46px 20px}
-.danke-ring{
-  width:70px;height:70px;border-radius:50%;
-  border:2.5px solid var(--lime-brand);margin:0 auto 22px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:32px;color:var(--lime);
-}
-.danke-hl{font-size:23px;font-weight:900;margin-bottom:10px;color:var(--text)}
-.danke p{font-size:15.5px;color:var(--text2);line-height:1.68;max-width:460px;margin:0 auto}
 
 /* ═══════════════ FOOTER ═══════════════ */
 body > footer{
@@ -1841,96 +1820,36 @@ body > footer{
   </div>
 </section>
 
-<!-- ═══════════════ FORMULAR ═══════════════ -->
+<!-- ═══════════════ KONTAKT ═══════════════ -->
 <section class="sec fade-in" id="formular" aria-labelledby="formular-heading">
   <div class="wrap">
     <div class="form-box">
       <div class="kicker" style="text-align:center">Kostenfreie Erstprüfung</div>
       <h2 class="form-hl" id="formular-heading">Forschungszulage prüfen lassen &ndash; kostenfrei und unverbindlich</h2>
       <p class="form-sub">
-        Ein paar Angaben genügen. Innerhalb von zwei Werktagen sagen wir Ihnen, ob Ihre Vorhaben
-        förderfähig sind und um welche Größenordnung es geht.
+        Ein Anruf oder eine Mail genügt. Innerhalb von zwei Werktagen sagen wir Ihnen, ob Ihre
+        Vorhaben förderfähig sind und um welche Größenordnung es geht.
       </p>
 
-      <form id="anfrage" novalidate>
-        <div class="fg-row">
-          <div class="fg">
-            <label for="f-name">Ihr Name <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-name" name="name" type="text" placeholder="Max Mustermann" autocomplete="name" maxlength="100" required>
-          </div>
-          <div class="fg">
-            <label for="f-firma">Unternehmen <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-firma" name="firma" type="text" placeholder="Musterfirma GmbH" autocomplete="organization" maxlength="120" required>
-          </div>
-        </div>
-
-        <div class="fg-row">
-          <div class="fg">
-            <label for="f-branche">Branche</label>
-            <select id="f-branche" name="branche">
-              <option value="" disabled selected>Bitte wählen …</option>
-              <option>Software / IT</option>
-              <option>KI &amp; Machine Learning</option>
-              <option>Maschinenbau / Fertigung</option>
-              <option>Medizintechnik / Pharma</option>
-              <option>Energie / Umwelt</option>
-              <option>Agrar / Lebensmittel</option>
-              <option>Chemie / Kunststoff</option>
-              <option>Bau / Baustoffe</option>
-              <option>Fahrzeugbau / Zulieferer</option>
-              <option>Handwerk</option>
-              <option>Logistik</option>
-              <option>Sonstige</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="f-ausgaben">F&amp;E-Ausgaben pro Jahr <span style="font-weight:400;opacity:.7">(Schätzung genügt)</span></label>
-            <select id="f-ausgaben" name="ausgaben">
-              <option value="" disabled selected>Bitte wählen …</option>
-              <option>Unter 50.000 €</option>
-              <option>50.000 – 200.000 €</option>
-              <option>200.000 – 500.000 €</option>
-              <option>500.000 € – 1 Mio. €</option>
-              <option>Über 1 Mio. €</option>
-              <option>Weiß ich nicht</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="fg-row">
-          <div class="fg">
-            <label for="f-mail">E-Mail-Adresse <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-mail" name="email" type="email" placeholder="max@musterfirma.de" autocomplete="email" maxlength="254" required>
-          </div>
-          <div class="fg">
-            <label for="f-tel">Telefon (optional)</label>
-            <input id="f-tel" name="telefon" type="tel" placeholder="+49 …" autocomplete="tel" maxlength="32">
-          </div>
-        </div>
-
-        <div class="fg">
-          <label for="f-beschr">Woran arbeitet Ihr Unternehmen? <span style="font-weight:400;opacity:.7">(optional)</span></label>
-          <textarea id="f-beschr" name="beschreibung" maxlength="5000" placeholder="Ein paar Stichworte genügen — zum Beispiel: Software für Logistikoptimierung, neue Maschinenkomponente, Rezepturentwicklung …"></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Kostenfreie Erstprüfung anfragen &rarr;</button>
-        <p class="dp">
-          Ihre Angaben verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage. Für die Prüfung
-          Ihres Förderpotenzials geben wir sie an unseren Kooperationspartner Grantonomy, eine Marke
-          der Grantonomy GmbH, weiter. Eine darüber hinausgehende Weitergabe
-          erfolgt ausschließlich mit Ihrer Einwilligung. Näheres in unserer
-          <a href="datenschutz.html">Datenschutzerklärung</a>.
-        </p>
-      </form>
-
-      <div class="danke" id="danke" role="alert">
-        <div class="danke-ring" aria-hidden="true">✓</div>
-        <p class="danke-hl">Ihre Anfrage ist angekommen.</p>
-        <p>
-          Wir sichten Ihre Angaben und melden uns innerhalb von zwei Werktagen mit einer ersten
-          Einschätzung zu Ihrem Förderpotenzial.
-        </p>
+      <div class="kontakt-wege">
+        <a class="kontakt-karte" href="tel:+4922129282931">
+          <span class="kontakt-ico" aria-hidden="true">📞</span>
+          <span class="kontakt-label">Anrufen</span>
+          <span class="kontakt-wert">+49 221 29282931</span>
+          <span class="kontakt-zusatz">Montag bis Freitag</span>
+        </a>
+        <a class="kontakt-karte" href="mailto:kontakt@robin-gut.org?subject=Forschungszulage%20%E2%80%93%20Potenzial%20pr%C3%BCfen&amp;body=Guten%20Tag%2C%0A%0Awir%20m%C3%B6chten%20unser%20F%C3%B6rderpotenzial%20pr%C3%BCfen%20lassen.%0A%0AUnternehmen%3A%20%0AAnsprechpartner%3A%20%0ATelefon%3A%20%0ABranche%3A%20%0AF%26E-Ausgaben%20pro%20Jahr%20(Sch%C3%A4tzung)%3A%20%0A%0AWoran%20wir%20arbeiten%3A%0A%0A">
+          <span class="kontakt-ico" aria-hidden="true">✉️</span>
+          <span class="kontakt-label">Schreiben</span>
+          <span class="kontakt-wert">kontakt@robin-gut.org</span>
+          <span class="kontakt-zusatz">Antwort in zwei Werktagen</span>
+        </a>
       </div>
+
+      <p class="kontakt-hinweis">
+        Für die Einschätzung helfen uns Branche, ungefähre F&amp;E-Ausgaben pro Jahr und ein
+        paar Stichworte zu Ihren Entwicklungsprojekten. Die Mailvorlage fragt das bereits ab.
+      </p>
     </div>
   </div>
 </section>
@@ -2024,7 +1943,7 @@ body > footer{
 
   /* ── Mobiles Menü mit Fokusfalle ──
      Solange das Menü offen ist, bleibt der Tastaturfokus darin gefangen —
-     sonst tabbt man unsichtbar in die Formularfelder dahinter. */
+     sonst tabbt man unsichtbar in die Inhalte dahinter. */
   var burger = document.getElementById('hamburger');
   var menu = document.getElementById('mobile-menu');
 
@@ -2158,37 +2077,6 @@ body > footer{
     counters.forEach(function(el){ cObs.observe(el); });
   }
 
-  /* ── Formular ──
-     Noch ohne Versand: zeigt die Bestätigung an.
-     Anbindung an Mailversand folgt separat. */
-  var form = document.getElementById('anfrage');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var pflicht = ['f-name','f-firma','f-mail'];
-      var fehlt = false;
-      pflicht.forEach(function(id){
-        var f = document.getElementById(id);
-        if(!f.value.trim()){
-          f.style.borderColor = '#C4462F';
-          fehlt = true;
-        } else {
-          f.style.borderColor = '';
-        }
-      });
-      var mail = document.getElementById('f-mail');
-      if(mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())){
-        mail.style.borderColor = '#C4462F';
-        fehlt = true;
-      }
-      if(fehlt) return;
-
-      form.style.display = 'none';
-      var danke = document.getElementById('danke');
-      danke.style.display = 'block';
-      danke.scrollIntoView({behavior:'smooth', block:'center'});
-    });
-  }
 
   /* ── Hero-Video bei reduzierter Bewegung anhalten ── */
   if(reduceMotion){

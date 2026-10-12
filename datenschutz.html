@@ -3,33 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#96BE0F">
 <meta name="robots" content="noindex,follow">
-<title>Datenschutzerklärung | Robin Gut Forschungszulage</title>
+<title>Datenschutzerklärung | ROBIN GUT Forschungszulage</title>
+
+<script>
+(function(){
+  var t = null;
+  try{ t = localStorage.getItem('rg-theme'); }catch(e){}
+  var dunkel = t ? t === 'dark'
+    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if(dunkel) document.documentElement.setAttribute('data-theme','dark');
+})();
+</script>
+
+<link rel="stylesheet" href="schrift.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#FBFCF7;color:#1B2113;line-height:1.7;padding:48px 24px}
-main{max-width:720px;margin:0 auto}
-h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-h2{font-size:18px;font-weight:700;margin:32px 0 10px}
-p{color:#4A5340;margin-bottom:14px}
-a{color:#6C8E12}
-.hinweis{background:#FFF4D6;border-left:3px solid #C89A1E;padding:18px 20px;border-radius:0 12px 12px 0;margin:28px 0}
-.hinweis strong{display:block;margin-bottom:6px}
-.zurueck{display:inline-block;margin-top:36px;font-weight:700;text-decoration:none;color:#6C8E12}
+:root{
+  --lime:#5A7A0C;            /* Textfarbe Lime, auf Hell auf 4,5:1 gebracht */
+  --lime-brand:#96BE0F;      /* Marken-Lime für Flächen und Logo */
+  --lime-dark:#55700C;
+  --lime-dim:rgba(150,190,15,0.10);
+  --lime-glow:rgba(150,190,15,0.20);
+
+  --bg:#FBFCF7;              /* Seitengrund */
+  --bg2:#F3F6EA;             /* abgesetzte Sektion */
+  --bg3:#EDF2DF;             /* stärker abgesetzt */
+  --card:#FFFFFF;
+  --card2:#F8FAF2;
+
+  --border:rgba(28,35,14,0.12);
+  --border2:rgba(108,142,18,0.30);
+
+  --text:#1B2113;            /* Überschriften */
+  --text2:#4A5340;           /* Fließtext */
+  --text3:#616B56;           /* Hinweise, 4,5:1 auf hellem Grund */
+
+  --on-lime:#0F1408;         /* Text auf Lime-Flächen */
+  --shadow-s:0 1px 2px rgba(27,33,19,.05),0 10px 28px -14px rgba(27,33,19,.16);
+  --shadow-m:0 2px 6px rgba(27,33,19,.07),0 24px 52px -26px rgba(27,33,19,.26);
+
+  --hero-tint:rgba(251,252,247,0.32);
+  --hero-textshadow:rgba(251,252,247,.9);
+  --hero-lesehilfe:rgba(251,252,247,.55);
+  --hero-sub-text:#3C452F;
+  --hero-micro-text:#4A5340;
+  --hero-grad:linear-gradient(135deg,#E9F0D6 0%,#F4F8EA 45%,#E9F0D6 100%);
+  --logo-filter:none;
+  --footer-logo-opacity:0.75;
+
+  --radius-btn:999px;        /* runde Buttons wie im Lovable-Entwurf */
+  --radius-card:20px;
+  --radius-field:14px;
+
+  /* Abstandsskala im 8er-Raster — überall dieselben Stufen */
+  --sp-1:8px; --sp-2:12px; --sp-3:16px; --sp-4:24px;
+  --sp-5:32px; --sp-6:40px; --sp-7:56px; --sp-8:80px;
+}
+:root[data-theme="dark"]{
+  --lime:#9EBD3D;
+  --lime-brand:#96BE0F;
+  --lime-dark:#7A9E00;
+  --lime-dim:rgba(150,190,15,0.12);
+  --lime-glow:rgba(150,190,15,0.22);
+
+  --bg:#0B0D08;
+  --bg2:#111408;
+  --bg3:#161B0D;
+  --card:#1A1F11;
+  --card2:#1B1E15;
+
+  --border:rgba(150,190,15,0.15);
+  --border2:rgba(150,190,15,0.28);
+
+  --text:#EEF3E2;
+  --text2:rgba(238,243,226,0.62);
+  --text3:rgba(238,243,226,0.62);
+
+  --on-lime:#0B0D08;
+  --shadow-s:0 4px 24px rgba(0,0,0,.35);
+  --shadow-m:0 16px 48px rgba(0,0,0,.5);
+
+  --hero-tint:rgba(11,13,8,0.34);
+  --hero-textshadow:rgba(7,11,4,.75);
+  --hero-lesehilfe:rgba(7,11,4,.62);
+  --hero-sub-text:#EEF3E2;
+  --hero-micro-text:#D6DEC6;
+  --hero-grad:linear-gradient(135deg,#0B1A06 0%,#152007 45%,#0B1A06 100%);
+  --logo-filter:none;
+  --footer-logo-opacity:0.45;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);
+  -webkit-font-smoothing:antialiased;line-height:1.7;
+  transition:background .3s ease,color .3s ease;
+}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:760px;margin:0 auto;padding-inline:clamp(20px,6vw,40px)}
+
+header.kopf{
+  border-bottom:1px solid var(--border);padding:20px 0;
+  background:var(--bg);position:sticky;top:0;z-index:10;
+}
+.kopf-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.kopf a.zurueck{
+  font-size:14px;font-weight:700;color:var(--lime);text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.kopf a.zurueck:hover{text-decoration:underline}
+.theme-toggle{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;flex-shrink:0;
+  background:transparent;border:1px solid var(--border2);
+  border-radius:999px;cursor:pointer;color:var(--text);
+  transition:background .2s,border-color .2s;
+}
+.theme-toggle:hover{background:var(--lime-dim);border-color:var(--lime)}
+.theme-toggle svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-sun{display:none}
+:root[data-theme="dark"] .icon-sun{display:block}
+:root[data-theme="dark"] .icon-moon{display:none}
+
+main{padding:48px 0 80px}
+h1{font-size:clamp(28px,5vw,40px);font-weight:900;letter-spacing:-.025em;line-height:1.15;margin-bottom:10px}
+.stand{font-size:13.5px;color:var(--text3);margin-bottom:40px}
+h2{
+  font-size:19px;font-weight:800;letter-spacing:-.01em;
+  margin:40px 0 12px;padding-top:28px;border-top:1px solid var(--border);
+}
+h2:first-of-type{border-top:none;padding-top:0;margin-top:34px}
+h3{font-size:16px;font-weight:700;margin:26px 0 8px}
+p{margin-bottom:14px;color:var(--text2)}
+p strong,li strong{color:var(--text);font-weight:700}
+ul{margin:0 0 16px 22px;color:var(--text2)}
+li{margin-bottom:7px}
+a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}
+
+.adresse{
+  background:var(--card);border:1px solid var(--border);
+  border-left:3px solid var(--lime-brand);
+  border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:28px;
+}
+.adresse p{margin-bottom:4px;color:var(--text)}
+.adresse p:last-child{margin-bottom:0}
+.adresse .firma{font-weight:800;font-size:17px;margin-bottom:10px}
+
+.hinweis{
+  background:var(--lime-dim);border-left:3px solid var(--lime-brand);
+  border-radius:0 14px 14px 0;padding:18px 22px;margin:26px 0;
+}
+.hinweis p{margin-bottom:0;font-size:14.5px}
+.hinweis strong{display:block;margin-bottom:5px;color:var(--lime);
+  font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+
+footer{
+  border-top:1px solid var(--border);padding:32px 0 48px;
+  font-size:13px;color:var(--text3);
+}
+footer a{color:var(--text2);text-decoration:none;margin-right:18px}
+footer a:hover{color:var(--lime)}
 </style>
 </head>
 <body>
-<main>
-  <h1>Datenschutzerklärung</h1>
-  <p>Informationen nach Art. 13 DSGVO</p>
 
-  <div class="hinweis">
-    <strong>Diese Seite ist noch nicht befüllt.</strong>
-    Die Inhalte werden vor der Veröffentlichung ergänzt. Bis dahin erreichen Sie uns
-    über das Kontaktformular auf der Startseite.
+<header class="kopf">
+  <div class="wrap kopf-inner">
+    <a class="zurueck" href="index.html">&larr; Zur Startseite</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Zwischen hellem und dunklem Modus wechseln">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
   </div>
+</header>
 
-  <a class="zurueck" href="index.html">&larr; Zurück zur Startseite</a>
+<main class="wrap">
+
+<h1>Datenschutzerklärung</h1>
+<p class="stand">Informationen nach Art. 13 und 14 DSGVO · Stand: Oktober 2026</p>
+
+<div class="hinweis">
+  <strong>Kurz gesagt</strong>
+  <p>
+    Diese Seite setzt keine Cookies, bindet keine externen Dienste ein und verfolgt Ihr
+    Verhalten nicht. Schriften, Bilder und Video liegen auf unserem eigenen Server. Beim
+    Aufruf entstehen lediglich die technischen Server-Protokolle, die jeder Webserver führt.
+  </p>
+</div>
+
+<h2>1. Verantwortlicher</h2>
+<div class="adresse">
+  <p class="firma">ROBIN GUT Stiftung gUG (haftungsbeschränkt)</p>
+  <p>Luxemburger Straße 83</p>
+  <p>50674 Köln</p>
+  <p style="margin-top:12px">Telefon: <a href="tel:+4922129282931">+49 221 29282931</a></p>
+  <p>E-Mail: <a href="mailto:kontakt@robin-gut.org">kontakt@robin-gut.org</a></p>
+</div>
+<p>
+  Vertreten durch Dieter Könnes. Bei Fragen zum Datenschutz erreichen Sie uns unter den
+  genannten Kontaktdaten.
+</p>
+
+<h2>2. Hosting</h2>
+<p>
+  Diese Seite wird gehostet von der <strong>Mittwald CM Service GmbH &amp; Co. KG</strong>,
+  Königsberger Straße 4-6, 32339 Espelkamp. Die Server stehen in Deutschland. Mit dem
+  Anbieter besteht ein Vertrag über die Auftragsverarbeitung nach Art. 28 DSGVO.
+</p>
+<p>
+  Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in einer
+  sicheren und zuverlässigen Bereitstellung dieser Seite.
+</p>
+
+<h2>3. Server-Protokolle</h2>
+<p>
+  Bei jedem Aufruf speichert der Server automatisch Daten, die Ihr Browser übermittelt:
+</p>
+<ul>
+  <li>IP-Adresse des anfragenden Geräts</li>
+  <li>Datum und Uhrzeit des Zugriffs</li>
+  <li>Name und URL der abgerufenen Datei</li>
+  <li>übertragene Datenmenge</li>
+  <li>Meldung über den Erfolg des Abrufs</li>
+  <li>Browsertyp und Betriebssystem</li>
+  <li>die zuvor besuchte Seite, sofern Ihr Browser sie übermittelt</li>
+</ul>
+<p>
+  Diese Daten dienen dem Betrieb, der Sicherheit und der Fehlersuche. Eine Zusammenführung
+  mit anderen Datenquellen findet nicht statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+  Die Protokolle werden nach spätestens sieben Tagen gelöscht, sofern sie nicht zur Aufklärung
+  eines Sicherheitsvorfalls länger benötigt werden.
+</p>
+
+<h2>4. Verschlüsselung</h2>
+<p>
+  Die Seite nutzt durchgehend eine TLS-Verschlüsselung. Sie erkennen das am Schloss in der
+  Adresszeile Ihres Browsers und an der Adresse, die mit <em>https</em> beginnt.
+</p>
+
+<h2>5. Cookies und Analyse</h2>
+<p>
+  Diese Seite setzt <strong>keine Cookies</strong> und nutzt <strong>keine
+  Analyse-Werkzeuge</strong>. Es findet keine Reichweitenmessung statt, kein Tracking, kein
+  Profiling. Ein Einwilligungsbanner ist deshalb nicht erforderlich.
+</p>
+<p>
+  Ihre Auswahl zwischen hellem und dunklem Erscheinungsbild speichert der Browser lokal auf
+  Ihrem Gerät. Diese Angabe verlässt Ihr Gerät nicht und erreicht uns zu keinem Zeitpunkt.
+  Sie ist nach § 25 Abs. 2 Nr. 2 TDDDG für den von Ihnen gewünschten Dienst erforderlich und
+  einwilligungsfrei.
+</p>
+
+<h2>6. Externe Dienste</h2>
+<p>
+  Diese Seite bindet <strong>keine externen Inhalte</strong> ein. Schriftarten, Bilder,
+  Videos und Programmcode liegen vollständig auf unserem eigenen Server. Es werden keine
+  Daten an Google, Meta oder andere Anbieter übermittelt. Auch Social-Media-Schaltflächen
+  oder Kartendienste kommen nicht zum Einsatz.
+</p>
+
+<h2>7. Kontaktaufnahme</h2>
+<p>
+  Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben zur
+  Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen. Dazu gehören Name,
+  Unternehmen, Kontaktdaten und der Inhalt Ihrer Nachricht.
+</p>
+<p>
+  Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage auf einen Vertrag
+  abzielt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO aufgrund unseres berechtigten Interesses an
+  der Beantwortung.
+</p>
+<p>
+  <strong>Weitergabe an unseren Kooperationspartner:</strong> Für die Prüfung Ihres
+  Förderpotenzials geben wir Ihre Angaben an die <strong>Grantonomy GmbH</strong> weiter.
+  Sie übernimmt die fachliche Prüfung und das Verfahren bei der Bescheinigungsstelle
+  Forschungszulage. Eine darüber hinausgehende Weitergabe an Dritte erfolgt ausschließlich
+  mit Ihrer ausdrücklichen Einwilligung oder aufgrund einer gesetzlichen Verpflichtung.
+</p>
+<p>
+  Ihre Angaben löschen wir, sobald der Zweck entfällt und keine gesetzlichen
+  Aufbewahrungsfristen entgegenstehen. Für Geschäftsbriefe gelten handels- und
+  steuerrechtliche Fristen von sechs beziehungsweise zehn Jahren.
+</p>
+
+<h2>8. Ihre Rechte</h2>
+<p>Sie haben jederzeit das Recht auf:</p>
+<ul>
+  <li><strong>Auskunft</strong> über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
+  <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+  <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+  <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+  <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+  <li><strong>Widerspruch</strong> gegen eine Verarbeitung auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+</ul>
+<p>
+  Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.
+  Für alle Anliegen genügt eine formlose Nachricht an
+  <a href="mailto:kontakt@robin-gut.org">kontakt@robin-gut.org</a>.
+</p>
+
+<h2>9. Beschwerderecht</h2>
+<p>
+  Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren, wenn Sie der Ansicht
+  sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt. Für uns zuständig ist:
+</p>
+<div class="adresse">
+  <p class="firma">Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</p>
+  <p>Kavalleriestraße 2-4</p>
+  <p>40213 Düsseldorf</p>
+  <p style="margin-top:10px">Telefon: 0211 38424-0</p>
+  <p>E-Mail: <a href="mailto:poststelle@ldi.nrw.de">poststelle@ldi.nrw.de</a></p>
+</div>
+
+<h2>10. Änderungen</h2>
+<p>
+  Wir passen diese Erklärung an, sobald sich die Verarbeitung ändert oder eine neue Rechtslage
+  dies erfordert. Für Ihren Besuch gilt jeweils die hier abrufbare Fassung.
+</p>
+
 </main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <p style="margin-top:14px">© 2026 ROBIN GUT · ROBIN GUT Stiftung gUG (haftungsbeschränkt)</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var t = document.getElementById('theme-toggle');
+  if(!t) return;
+  t.addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark';
+    if(dark){ root.removeAttribute('data-theme'); }
+    else { root.setAttribute('data-theme','dark'); }
+    try{ localStorage.setItem('rg-theme', dark ? 'light' : 'dark'); }catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
