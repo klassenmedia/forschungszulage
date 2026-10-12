@@ -1565,9 +1565,7 @@ body > footer{
   0%,100%{transform:scale(1);opacity:.10}
   50%{transform:scale(1.09);opacity:.20}
 }
-.kl-emoji{text-anchor:middle;dominant-baseline:central}
-.kl-emoji-gross{font-size:112px}
-.kl-emoji-klein{font-size:74px}
+
 
 /* ── Stationskarten ── */
 .kl-card{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
@@ -1623,9 +1621,7 @@ body > footer{
   border:3px solid var(--lime-brand);background:var(--lime-dim);
   display:flex;align-items:center;justify-content:center;
 }
-.klm-wald{display:flex;align-items:center;line-height:1}
-.klm-gross{font-size:62px;position:relative;z-index:2}
-.klm-klein{font-size:42px;margin:0 -9px}
+.klm-wald{width:112px;height:112px;object-fit:contain;display:block}
 </style>
 
 <!-- ═══════════ VARIANTE A — Kreis (ab 700px) ═══════════ -->
@@ -1652,11 +1648,8 @@ body > footer{
   <!-- ── Mitte: Baum ── -->
   <circle class="kl-core-halo" cx="480" cy="330" r="106"/>
   <circle class="kl-core" cx="480" cy="330" r="88"/>
-  <g class="kl-wald">
-    <text class="kl-emoji kl-emoji-klein" x="406" y="344">🌳</text>
-    <text class="kl-emoji kl-emoji-klein" x="554" y="344">🌳</text>
-    <text class="kl-emoji kl-emoji-gross" x="480" y="328">🌳</text>
-  </g>
+  <image class="kl-wald" x="405" y="255" width="150" height="150"
+         preserveAspectRatio="xMidYMid meet" href="baumgruppe.webp"/>
 
   <!-- ═══ 01 Förderung — oben ═══ -->
   <g>
@@ -1683,9 +1676,8 @@ body > footer{
 <!-- ═══════════ VARIANTE B — Stapel (unter 700px) ═══════════ -->
 <div class="kreis-mobil">
   <p class="klm-kreis" aria-hidden="true">
-    <span class="klm-wald">
-      <span class="klm-klein">🌳</span><span class="klm-gross">🌳</span><span class="klm-klein">🌳</span>
-    </span>
+    <img class="klm-wald" src="baumgruppe.webp" alt="" width="352" height="352"
+         loading="lazy" decoding="async">
   </p>
   <ol class="klm-liste">
     <li class="klm-schritt">
