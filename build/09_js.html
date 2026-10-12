@@ -51,7 +51,7 @@
 
   /* ── Mobiles Menü mit Fokusfalle ──
      Solange das Menü offen ist, bleibt der Tastaturfokus darin gefangen —
-     sonst tabbt man unsichtbar in die Formularfelder dahinter. */
+     sonst tabbt man unsichtbar in die Inhalte dahinter. */
   var burger = document.getElementById('hamburger');
   var menu = document.getElementById('mobile-menu');
 
@@ -185,37 +185,6 @@
     counters.forEach(function(el){ cObs.observe(el); });
   }
 
-  /* ── Formular ──
-     Noch ohne Versand: zeigt die Bestätigung an.
-     Anbindung an Mailversand folgt separat. */
-  var form = document.getElementById('anfrage');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var pflicht = ['f-name','f-firma','f-mail'];
-      var fehlt = false;
-      pflicht.forEach(function(id){
-        var f = document.getElementById(id);
-        if(!f.value.trim()){
-          f.style.borderColor = '#C4462F';
-          fehlt = true;
-        } else {
-          f.style.borderColor = '';
-        }
-      });
-      var mail = document.getElementById('f-mail');
-      if(mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())){
-        mail.style.borderColor = '#C4462F';
-        fehlt = true;
-      }
-      if(fehlt) return;
-
-      form.style.display = 'none';
-      var danke = document.getElementById('danke');
-      danke.style.display = 'block';
-      danke.scrollIntoView({behavior:'smooth', block:'center'});
-    });
-  }
 
   /* ── Hero-Video bei reduzierter Bewegung anhalten ── */
   if(reduceMotion){
