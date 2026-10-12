@@ -18,7 +18,8 @@ const EMPFAENGER      = 'marvin@grantonomy.de';
 const KOPIE           = 'kontakt@robin-gut.org';
 const ABSENDER        = 'kontakt@robin-gut.org';
 const ABSENDER_NAME   = 'ROBIN GUT Forschungszulage';
-const ANTWORT_AN      = 'kontakt@robin-gut.org';
+/** Antworten auf die Bestätigungsmail gehen an Grantonomy, nicht an uns. */
+const ANTWORT_AN      = 'marvin@grantonomy.de';
 const BETREFF_PRAEFIX = 'Robingut-Anfrage Forschungszulage';
 
 /** Nur von dieser Herkunft nimmt der Endpunkt Anfragen an. */
@@ -280,8 +281,8 @@ $bestaetigung = implode("\n", [
     'förderfähig sind und um welche Größenordnung es geht. Andernfalls meldet',
     'sich Grantonomy innerhalb von zwei Werktagen bei Ihnen.',
     '',
-    'Haben Sie diese Anfrage nicht gestellt? Dann antworten Sie einfach',
-    'auf diese Mail, wir gehen der Sache nach.',
+    'Fragen vorab oder diese Anfrage gar nicht gestellt? Antworten Sie',
+    'einfach auf diese Mail, sie erreicht Grantonomy direkt.',
     '',
     'Viele Grüße',
     'ROBIN GUT Stiftung gUG',

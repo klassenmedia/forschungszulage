@@ -1,1 +1,5 @@
-Require all denied
+# Kein direkter Web-Zugriff; die Datei wird nur per require eingebunden.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^ - [R=404,L]
+</IfModule>
