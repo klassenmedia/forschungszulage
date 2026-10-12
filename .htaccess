@@ -22,7 +22,10 @@
 </IfModule>
 
 # ══ Nicht ausliefern: Quelldateien, Tests, Doku ══
-<FilesMatch "^\.|\.(b64|py|md)$">
-  Require all denied
-</FilesMatch>
-RedirectMatch 404 ^/(tests|docs|build|lib)/
+# mod_rewrite statt Require/RedirectMatch — läuft auf Apache 2.2 wie 2.4.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(tests|docs|build)/ - [R=404,L]
+  RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+  RewriteRule \.(b64|py|md)$ - [R=404,L]
+</IfModule>
