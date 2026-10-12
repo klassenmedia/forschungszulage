@@ -186,6 +186,77 @@
   }
 
 
+  /* ── Anfrageformular ── */
+  var form = document.getElementById('anfrage');
+  if(form){
+    var zeitfeld = document.getElementById('f-zeit');
+    if(zeitfeld){ zeitfeld.value = Math.floor(Date.now() / 1000); }
+
+    // Der Knopf startet gesperrt: ohne JS käme sonst ein Form-POST ohne
+    // Zeitstempel an, den der Server stillschweigend verwirft.
+    var startKnopf = form.querySelector('.submit-btn');
+    if(startKnopf){ startKnopf.disabled = false; }
+
+    var fehlerbox = document.createElement('p');
+    fehlerbox.className = 'form-fehler';
+    fehlerbox.setAttribute('role', 'alert');
+    form.appendChild(fehlerbox);
+
+    function zeigeFehler(text){
+      fehlerbox.textContent = text;
+      fehlerbox.style.display = 'block';
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      fehlerbox.style.display = 'none';
+
+      var fehlt = false;
+      ['f-name','f-firma','f-mail'].forEach(function(id){
+        var feld = document.getElementById(id);
+        var leer = !feld.value.trim();
+        feld.style.borderColor = leer ? '#C4462F' : '';
+        if(leer){ fehlt = true; }
+      });
+
+      var mail = document.getElementById('f-mail');
+      if(mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())){
+        mail.style.borderColor = '#C4462F';
+        fehlt = true;
+      }
+      if(fehlt){
+        zeigeFehler('Bitte prüfen Sie die markierten Felder.');
+        return;
+      }
+
+      var knopf = form.querySelector('.submit-btn');
+      var beschriftung = knopf.innerHTML;
+      knopf.disabled = true;
+      knopf.textContent = 'Wird gesendet …';
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function(antwort){
+          return antwort.json().then(function(daten){
+            return { ok: antwort.ok, meldung: daten.meldung };
+          });
+        })
+        .then(function(ergebnis){
+          if(!ergebnis.ok){
+            throw new Error(ergebnis.meldung || 'Unbekannter Fehler');
+          }
+          form.style.display = 'none';
+          var danke = document.getElementById('danke');
+          danke.style.display = 'block';
+          danke.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function(fehler){
+          knopf.disabled = false;
+          knopf.innerHTML = beschriftung;
+          zeigeFehler(fehler.message || 'Der Versand hat nicht geklappt. Bitte rufen Sie uns an oder schreiben Sie an kontakt@robin-gut.org.');
+        });
+    });
+  }
+
   /* ── Hero-Video bei reduzierter Bewegung anhalten ── */
   if(reduceMotion){
     var vid = document.getElementById('hero-video');
